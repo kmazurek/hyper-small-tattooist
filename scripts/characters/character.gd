@@ -5,7 +5,6 @@ extends CharacterBody2D
 var is_walking: bool = false
 var current_button_index = -1
 
-
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.is_pressed() && !is_walking && current_button_index < 0:
@@ -31,3 +30,11 @@ func _process(delta: float) -> void:
 		velocity = mouse_position - position
 		velocity = velocity.normalized() * clampf(velocity.length(), 0, max_velocity)
 		move_and_slide()
+
+
+func _on_time_left_time_out() -> void:
+	is_walking = false
+	$Drawer.stop_drawing(position)
+	set_process(false)
+	set_process_input(false)
+	current_button_index = -1

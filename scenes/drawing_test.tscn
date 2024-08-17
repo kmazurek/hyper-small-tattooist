@@ -1,8 +1,23 @@
-[gd_scene load_steps=2 format=3 uid="uid://7vpa2j7c454g"]
+[gd_scene load_steps=3 format=3 uid="uid://7vpa2j7c454g"]
 
 [ext_resource type="PackedScene" uid="uid://dgciynjjiu4er" path="res://scenes/characters/character.tscn" id="1_gv0l8"]
+[ext_resource type="Script" path="res://scripts/components/time_manager.gd" id="2_sjpsd"]
 
 [node name="DrawingTest" type="Node2D"]
 
 [node name="Character" parent="." instance=ExtResource("1_gv0l8")]
 position = Vector2(550, 286)
+
+[node name="TimeLeft" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(200, 0)
+offset_left = 449.0
+offset_top = 22.0
+offset_right = 649.0
+offset_bottom = 49.0
+pivot_offset = Vector2(100, 0)
+max_value = 5.0
+value = 5.0
+show_percentage = false
+script = ExtResource("2_sjpsd")
+
+[connection signal="time_out" from="TimeLeft" to="Character" method="_on_time_left_time_out"]

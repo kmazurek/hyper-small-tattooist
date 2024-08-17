@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://7vpa2j7c454g"]
+[gd_scene load_steps=7 format=3 uid="uid://7vpa2j7c454g"]
 
 [ext_resource type="PackedScene" uid="uid://dgciynjjiu4er" path="res://scenes/characters/character.tscn" id="1_gv0l8"]
 [ext_resource type="Script" path="res://scripts/game_world.gd" id="1_tsm6f"]
 [ext_resource type="PackedScene" uid="uid://c5ujmfkj6com6" path="res://scenes/components/time_bar.tscn" id="2_txhqv"]
 [ext_resource type="PackedScene" uid="uid://bjx0qr7rglxml" path="res://scenes/components/pain_bar.tscn" id="3_glnsa"]
 [ext_resource type="Texture2D" uid="uid://7yy8b6ffcadc" path="res://assets/Tattoo_Visual.png" id="4_264nb"]
+[ext_resource type="PackedScene" uid="uid://76sp2httv23d" path="res://scenes/components/flash.tscn" id="6_fkxu6"]
 
 [node name="DrawingTest" type="Node2D"]
 script = ExtResource("1_tsm6f")
@@ -27,6 +28,7 @@ max_value = 120.0
 
 [node name="PainBar" parent="." instance=ExtResource("3_glnsa")]
 position = Vector2(271, 171)
+maximum_pain = 50.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -59,7 +61,10 @@ z_index = -10
 position = Vector2(160, 90)
 texture = ExtResource("4_264nb")
 
+[node name="Flash" parent="." instance=ExtResource("6_fkxu6")]
+
 [connection signal="on_character_move" from="Character" to="PainBar" method="_on_character_move"]
 [connection signal="time_out" from="TimeLeft" to="Character" method="_on_time_left_time_out"]
 [connection signal="on_pain_exceeded" from="PainBar" to="." method="_on_pain_exceeded"]
 [connection signal="on_pain_exceeded" from="PainBar" to="Character" method="_on_pain_exceeded"]
+[connection signal="on_pain_exceeded" from="PainBar" to="Flash" method="_flash"]

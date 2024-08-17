@@ -3,9 +3,14 @@ class_name Drawer extends Node2D
 @export var color: Color
 @export var width_curve: Curve
 
+var viewport: SubViewport
 var current_line: Line2D
 
 var is_drawing: bool = false
+
+func _ready() -> void:
+	viewport = get_tree().root.find_child("SubViewport", true, false) as SubViewport
+	return
 
 func start_drawing(current_position: Vector2) -> void:
 	is_drawing = true
@@ -14,7 +19,8 @@ func start_drawing(current_position: Vector2) -> void:
 	current_line.default_color = color
 	current_line.width_curve = width_curve
 	current_line.width = 4
-	get_tree().root.add_child(current_line)
+	current_line.visibility_layer = 2
+	viewport.add_child(current_line)
 	
 	current_line.add_point(current_position)
 	

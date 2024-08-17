@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://7vpa2j7c454g"]
+[gd_scene load_steps=6 format=3 uid="uid://7vpa2j7c454g"]
 
 [ext_resource type="PackedScene" uid="uid://dgciynjjiu4er" path="res://scenes/characters/character.tscn" id="1_gv0l8"]
+[ext_resource type="Script" path="res://scripts/game_world.gd" id="1_tsm6f"]
 [ext_resource type="PackedScene" uid="uid://c5ujmfkj6com6" path="res://scenes/components/time_bar.tscn" id="2_txhqv"]
 [ext_resource type="PackedScene" uid="uid://bjx0qr7rglxml" path="res://scenes/components/pain_bar.tscn" id="3_glnsa"]
+[ext_resource type="Texture2D" uid="uid://7yy8b6ffcadc" path="res://assets/Tattoo_Visual.png" id="4_264nb"]
 
 [node name="DrawingTest" type="Node2D"]
+script = ExtResource("1_tsm6f")
 
 [node name="Character" parent="." instance=ExtResource("1_gv0l8")]
 position = Vector2(161, 91)
@@ -23,8 +26,40 @@ pivot_offset = Vector2(0, 0)
 max_value = 120.0
 
 [node name="PainBar" parent="." instance=ExtResource("3_glnsa")]
-position = Vector2(289, 139)
+position = Vector2(271, 171)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(78, 94)
+build_mode = 1
+polygon = PackedVector2Array(-4, -18, -1, -38, 2, -55, 6, -62, 12, -71, 22, -79, 38, -85, 61, -87, 92, -88, 127, -85, 155, -74, 180, -59, 182, -37, 178, -25, 162, -13, 160, -6, 153, 13, 145, 28, 136, 41, 123, 42, 101, 42, 83, 39, 63, 36, 56, 32, 59, 22, 44, 7, 35, 20, 24, 25, 9, 25, -2, 10, -2, -9)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+z_index = -1000
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+canvas_cull_mask = 4293918722
+size = Vector2i(320, 180)
+render_target_update_mode = 4
+
+[node name="Background" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
+visibility_layer = 2
+z_index = -10
+position = Vector2(160, 90)
+texture = ExtResource("4_264nb")
 
 [connection signal="on_character_move" from="Character" to="PainBar" method="_on_character_move"]
 [connection signal="time_out" from="TimeLeft" to="Character" method="_on_time_left_time_out"]
+[connection signal="on_pain_exceeded" from="PainBar" to="." method="_on_pain_exceeded"]
 [connection signal="on_pain_exceeded" from="PainBar" to="Character" method="_on_pain_exceeded"]

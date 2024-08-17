@@ -19,7 +19,7 @@ pain_curve = ExtResource("2_xynvm")
 
 [node name="Bar" type="ProgressBar" parent="."]
 self_modulate = Color(0.901961, 0.270588, 0.223529, 1)
-z_index = -1000
+z_index = -2
 offset_left = 3.0
 offset_top = -4.0
 offset_right = 79.0
@@ -46,4 +46,4 @@ texture = ExtResource("2_pu7j1")
 position = Vector2(7, -80)
 texture = ExtResource("4_m7hbj")
 script = ExtResource("5_6io14")
-y_offset = -4
+y_offset = -5

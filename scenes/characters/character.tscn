@@ -17,7 +17,7 @@ shape = SubResource("RectangleShape2D_bbmxj")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = 2
-position = Vector2(-3.57628e-07, -12.5)
+position = Vector2(-7, -25)
 scale = Vector2(14, 25)
 texture = SubResource("CanvasTexture_nuid6")
 

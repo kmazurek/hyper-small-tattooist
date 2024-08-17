@@ -14,3 +14,4 @@ func save_screenshot() -> void:
 	var screenshots_num = screenshot_directory.get_files().size()
 	
 	$SubViewportContainer/SubViewport.get_texture().get_image().save_png(screenshot_directory.get_current_dir() + "/tattoo_" + str(screenshots_num) + ".png")
+	#OS.shell_show_in_file_manager(screenshot_directory.get_current_dir())

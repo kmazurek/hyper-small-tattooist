@@ -1,17 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjx0qr7rglxml"]
+[gd_scene load_steps=5 format=3 uid="uid://bjx0qr7rglxml"]
 
 [ext_resource type="Script" path="res://scripts/components/pain_manager.gd" id="1_j0nnt"]
+[ext_resource type="Texture2D" uid="uid://1dacp6b7tui4" path="res://assets/pain_glass.png" id="2_pu7j1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c5si6"]
 
 [sub_resource type="Curve" id="Curve_krvj8"]
 _data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(0.247, 0.1), 0.0, 0.0, 0, 0, Vector2(0.753, 0.1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 4
 
-[node name="PainBar" type="ProgressBar"]
-offset_right = 200.0
-offset_bottom = 20.0
+[node name="Node2D" type="Node2D"]
+
+[node name="PainBar" type="ProgressBar" parent="."]
+self_modulate = Color(1, 0, 0, 1)
+offset_left = 3.0
+offset_top = -1.0
+offset_right = 83.0
+offset_bottom = 8.0
 rotation = -1.5708
-value = 50.0
+theme_override_styles/background = SubResource("StyleBoxEmpty_c5si6")
+value = 100.0
 show_percentage = false
 script = ExtResource("1_j0nnt")
 maximum_pain = 20.0
 pain_curve = SubResource("Curve_krvj8")
+
+[node name="PainGlass" type="Sprite2D" parent="."]
+position = Vector2(7.49985, -42)
+texture = ExtResource("2_pu7j1")

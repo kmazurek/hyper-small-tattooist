@@ -1,0 +1,16 @@
+# Godot 4+ specific ignores
+.godot/
+.import/
+/android/
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db

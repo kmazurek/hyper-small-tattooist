@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var max_velocity: float = 200.0
+@export var max_velocity: float = 100.0
 
 var is_walking: bool = false
 var is_drawing: bool = false

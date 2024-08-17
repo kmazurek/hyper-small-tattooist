@@ -13,6 +13,7 @@ func start_drawing(current_position: Vector2) -> void:
 	current_line = Line2D.new()
 	current_line.default_color = color
 	current_line.width_curve = width_curve
+	current_line.width = 4
 	get_tree().root.add_child(current_line)
 	
 	current_line.add_point(current_position)

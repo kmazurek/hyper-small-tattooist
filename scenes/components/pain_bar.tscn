@@ -1,30 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjx0qr7rglxml"]
+[gd_scene load_steps=9 format=3 uid="uid://bjx0qr7rglxml"]
 
 [ext_resource type="Script" path="res://scripts/components/pain_manager.gd" id="1_j0nnt"]
 [ext_resource type="Texture2D" uid="uid://1dacp6b7tui4" path="res://assets/pain_glass.png" id="2_pu7j1"]
+[ext_resource type="Curve" uid="uid://bxkdjyyea3ryl" path="res://scenes/components/pain_curve.tres" id="2_xynvm"]
+[ext_resource type="Texture2D" uid="uid://c6jr3e8mh3k2s" path="res://assets/pain_top.png" id="4_m7hbj"]
+[ext_resource type="Script" path="res://scripts/components/pain_top.gd" id="5_6io14"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c5si6"]
 
-[sub_resource type="Curve" id="Curve_krvj8"]
-_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(0.247, 0.1), 0.0, 0.0, 0, 0, Vector2(0.753, 0.1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 4
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmsws"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_nu3lb"]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="PainBar" type="ProgressBar" parent="."]
-self_modulate = Color(1, 0, 0, 1)
-offset_left = 3.0
-offset_top = -1.0
-offset_right = 83.0
-offset_bottom = 8.0
-rotation = -1.5708
-theme_override_styles/background = SubResource("StyleBoxEmpty_c5si6")
-value = 100.0
-show_percentage = false
 script = ExtResource("1_j0nnt")
 maximum_pain = 20.0
-pain_curve = SubResource("Curve_krvj8")
+pain_curve = ExtResource("2_xynvm")
 
-[node name="PainGlass" type="Sprite2D" parent="."]
+[node name="Bar" type="ProgressBar" parent="."]
+self_modulate = Color(0.901961, 0.270588, 0.223529, 1)
+z_index = -1000
+offset_left = 3.0
+offset_top = -4.0
+offset_right = 79.0
+offset_bottom = 5.0
+rotation = -1.5708
+theme_override_styles/background = SubResource("StyleBoxEmpty_c5si6")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kmsws")
+show_percentage = false
+
+[node name="BarBottom" type="Sprite2D" parent="Bar"]
+self_modulate = Color(0.541176, 0.160784, 0.133333, 1)
+position = Vector2(-3.68356e-06, 1)
+rotation = 1.5708
+scale = Vector2(7, 1)
+texture = SubResource("CanvasTexture_nu3lb")
+
+[node name="Glass" type="Sprite2D" parent="."]
+z_index = 1
+z_as_relative = false
 position = Vector2(7.49985, -42)
 texture = ExtResource("2_pu7j1")
+
+[node name="BarTop" type="Sprite2D" parent="."]
+position = Vector2(7, -80)
+texture = ExtResource("4_m7hbj")
+script = ExtResource("5_6io14")
+y_offset = -4

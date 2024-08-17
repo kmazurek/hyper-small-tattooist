@@ -7,23 +7,24 @@
 [node name="DrawingTest" type="Node2D"]
 
 [node name="Character" parent="." instance=ExtResource("1_gv0l8")]
-position = Vector2(550, 286)
+position = Vector2(161, 91)
 
 [node name="TimeLeft" parent="." instance=ExtResource("2_txhqv")]
+visible = false
 custom_minimum_size = Vector2(0, 0)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 447.0
-offset_top = 18.0
-offset_right = 647.0
-offset_bottom = 38.0
+offset_left = 69.0
+offset_top = 7.0
+offset_right = 269.0
 grow_horizontal = 2
 pivot_offset = Vector2(0, 0)
-max_value = 30.0
+max_value = 120.0
 
 [node name="PainBar" parent="." instance=ExtResource("3_glnsa")]
-position = Vector2(1115, 323)
+position = Vector2(289, 139)
 
 [connection signal="on_character_move" from="Character" to="PainBar" method="_on_character_move"]
 [connection signal="time_out" from="TimeLeft" to="Character" method="_on_time_left_time_out"]
+[connection signal="on_pain_exceeded" from="PainBar" to="Character" method="_on_pain_exceeded"]

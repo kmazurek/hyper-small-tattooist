@@ -3,7 +3,10 @@ extends CharacterBody2D
 @export var max_velocity: float = 200.0
 
 var is_walking: bool = false
+var is_drawing: bool = false
 var current_button_index = -1
+
+signal on_character_move(velocity: Vector2, max_velocity: float)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -30,11 +33,18 @@ func _process(delta: float) -> void:
 		velocity = mouse_position - position
 		velocity = velocity.normalized() * clampf(velocity.length(), 0, max_velocity)
 		move_and_slide()
+		if $Drawer.is_drawing:
+			on_character_move.emit(velocity, max_velocity)
 
-
-func _on_time_left_time_out() -> void:
+func on_failure() -> void:
 	is_walking = false
 	$Drawer.stop_drawing(position)
 	set_process(false)
 	set_process_input(false)
 	current_button_index = -1
+
+func _on_time_left_time_out() -> void:
+	on_failure()
+
+func _on_pain_exceeded() -> void:
+	on_failure()

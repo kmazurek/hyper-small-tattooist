@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://c5ujmfkj6com6"]
+
+[ext_resource type="Script" path="res://scripts/components/time_manager.gd" id="1_q6fh6"]
+
+[node name="TimeLeft" type="ProgressBar"]
+custom_minimum_size = Vector2(200, 0)
+offset_left = -100.0
+offset_right = 100.0
+offset_bottom = 27.0
+pivot_offset = Vector2(100, 0)
+max_value = 5.0
+value = 5.0
+show_percentage = false
+script = ExtResource("1_q6fh6")

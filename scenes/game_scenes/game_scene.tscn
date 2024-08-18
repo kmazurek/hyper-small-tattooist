@@ -63,9 +63,12 @@ position = Vector2(298, 165)
 [node name="Bar" parent="InkBar" index="0"]
 offset_right = 118.0
 
+[connection signal="on_failure" from="." to="Sprite" method="_on_failure"]
+[connection signal="on_failure" from="." to="Character" method="on_failure"]
 [connection signal="on_character_move" from="Character" to="PainBar" method="_on_character_move"]
 [connection signal="on_character_move" from="Character" to="InkBar" method="_on_character_move"]
-[connection signal="on_pain_exceeded" from="PainBar" to="Sprite" method="_on_pain_exceeded"]
-[connection signal="on_pain_exceeded" from="PainBar" to="Character" method="_on_pain_exceeded"]
+[connection signal="on_time_out" from="Table" to="." method="_on_time_out"]
+[connection signal="on_pain_exceeded" from="PainBar" to="." method="_on_pain_exceeded"]
+[connection signal="on_ink_depleted" from="InkBar" to="." method="_on_ink_depleted"]
 
 [editable path="InkBar"]

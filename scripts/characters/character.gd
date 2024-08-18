@@ -42,9 +42,3 @@ func on_failure() -> void:
 	set_process(false)
 	set_process_input(false)
 	current_button_index = -1
-
-func _on_time_left_time_out() -> void:
-	on_failure()
-
-func _on_pain_exceeded() -> void:
-	on_failure()

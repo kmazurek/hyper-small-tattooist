@@ -20,8 +20,7 @@ func _input(event: InputEvent) -> void:
 		else:
 			$AnimSprite.play("idle")
 
-
-func _on_pain_exceeded() -> void:
+func _on_failure() -> void:
 	set_process_input(false)
 	$AnimSprite.play("lose_idle")
 

@@ -1,10 +1,24 @@
 extends Node
 
+signal on_failure
+
+func _on_time_out() -> void:
+	failure()
+
+func _on_ink_depleted() -> void:
+	failure()
+
 func _on_pain_exceeded() -> void:
-	await RenderingServer.frame_post_draw
+	failure()
+
+func _on_next_client() -> void:
 	save_screenshot()
 
+func failure() -> void:
+	on_failure.emit()
+	
 func save_screenshot() -> void:
+	await RenderingServer.frame_post_draw
 	var user_directory = DirAccess.open(OS.get_executable_path() + "/..")
 
 	if !user_directory.dir_exists("tattoos"):

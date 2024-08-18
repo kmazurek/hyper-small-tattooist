@@ -1,0 +1,14 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=4 format=3 uid="uid://s47f4rndtt1l"]
+
+[ext_resource type="AudioStream" uid="uid://c8ksrsbhanpdo" path="res://assets/audio/sfx/tattoo-machine-001.ogg" id="1_3kp3x"]
+[ext_resource type="AudioStream" uid="uid://ci4wbxmy4kven" path="res://assets/audio/sfx/tattoo-machine-002.ogg" id="2_rctt2"]
+[ext_resource type="AudioStream" uid="uid://cdg5cgcgml0t5" path="res://assets/audio/sfx/tattoo-machine-003.ogg" id="3_7aqij"]
+
+[resource]
+playback_mode = 1
+random_pitch = 1.05
+random_volume_offset_db = 1.0
+streams_count = 3
+stream_0/stream = ExtResource("1_3kp3x")
+stream_1/stream = ExtResource("2_rctt2")
+stream_2/stream = ExtResource("3_7aqij")

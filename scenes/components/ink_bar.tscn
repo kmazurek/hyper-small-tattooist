@@ -1,10 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://bjx0qr7rglxml"]
+[gd_scene load_steps=7 format=3 uid="uid://ci1afl8yvra7x"]
 
-[ext_resource type="Script" path="res://scripts/components/pain_manager.gd" id="1_j0nnt"]
-[ext_resource type="Texture2D" uid="uid://1dacp6b7tui4" path="res://assets/pain_glass.png" id="2_pu7j1"]
-[ext_resource type="Curve" uid="uid://bxkdjyyea3ryl" path="res://scenes/components/pain_curve.tres" id="2_xynvm"]
-[ext_resource type="SpriteFrames" uid="uid://cbavw4cmtbkve" path="res://assets/UI/Tattoo_liquid_top_pain.res" id="4_6em0c"]
-[ext_resource type="Script" path="res://scripts/components/pain_top.gd" id="5_6io14"]
+[ext_resource type="SpriteFrames" uid="uid://dn8s2u5qbl1fd" path="res://assets/UI/Tattoo_liquid_top_ink.res" id="2_002c3"]
+[ext_resource type="Texture2D" uid="uid://1dacp6b7tui4" path="res://assets/pain_glass.png" id="3_5745m"]
+[ext_resource type="Script" path="res://scripts/components/pain_top.gd" id="5_wtiw5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c5si6"]
 
@@ -14,24 +12,22 @@ bg_color = Color(1, 1, 1, 1)
 [sub_resource type="CanvasTexture" id="CanvasTexture_nu3lb"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_j0nnt")
-maximum_pain = 20.0
-pain_curve = ExtResource("2_xynvm")
 
 [node name="Bar" type="ProgressBar" parent="."]
-self_modulate = Color(0.901961, 0.270588, 0.223529, 1)
+self_modulate = Color(0.168627, 0.168627, 0.270588, 1)
 z_index = -2
 offset_left = 3.0
 offset_top = -4.0
-offset_right = 73.0
+offset_right = 103.0
 offset_bottom = 5.0
 rotation = -1.5708
 theme_override_styles/background = SubResource("StyleBoxEmpty_c5si6")
 theme_override_styles/fill = SubResource("StyleBoxFlat_kmsws")
+value = 100.0
 show_percentage = false
 
 [node name="BarBottom" type="Sprite2D" parent="Bar"]
-self_modulate = Color(0.901961, 0.270588, 0.223529, 1)
+self_modulate = Color(0.168627, 0.168627, 0.270588, 1)
 position = Vector2(-3.68356e-06, 1)
 rotation = 1.5708
 scale = Vector2(7, 1)
@@ -42,7 +38,7 @@ visible = false
 z_index = 1
 z_as_relative = false
 position = Vector2(7.49985, -42)
-texture = ExtResource("2_pu7j1")
+texture = ExtResource("3_5745m")
 metadata/_aseprite_wizard_interface_config_ = {
 "animation_section": true,
 "layer_section": true,
@@ -53,8 +49,7 @@ metadata/_aseprite_wizard_interface_config_ = {
 [node name="BarTop" type="AnimatedSprite2D" parent="."]
 z_index = -2
 position = Vector2(8, -80)
-sprite_frames = ExtResource("4_6em0c")
+sprite_frames = ExtResource("2_002c3")
 animation = &"Tag"
-frame_progress = 0.053642
-script = ExtResource("5_6io14")
+script = ExtResource("5_wtiw5")
 y_offset = -5

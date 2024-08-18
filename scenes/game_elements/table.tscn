@@ -10,7 +10,7 @@
 script = ExtResource("1_4xurb")
 
 [node name="TattooTableBack" type="Sprite2D" parent="."]
-z_index = 1
+z_index = -5
 position = Vector2(276, 90)
 texture = ExtResource("1_npl0e")
 

@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://v60hup17t1e8"]
+[gd_scene load_steps=4 format=3 uid="uid://v60hup17t1e8"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_3ych5"]
+[ext_resource type="Theme" uid="uid://bx0cs1bs1vjyb" path="res://assets/button_theme.tres" id="2_xrvgy"]
+[ext_resource type="FontFile" uid="uid://bmpy836xurddj" path="res://assets/fonts/monciaki-sans-regular.ttf" id="3_41nfg"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -20,10 +22,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -16.0
-offset_right = 50.0
-offset_bottom = 16.0
+offset_left = -31.5
+offset_top = -50.5
+offset_right = 31.5
+offset_bottom = 50.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -32,15 +34,24 @@ size_flags_vertical = 4
 [node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 4
+theme = ExtResource("2_xrvgy")
+theme_override_fonts/font = ExtResource("3_41nfg")
 text = "Start"
+flat = true
 
 [node name="Gallery" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_xrvgy")
+theme_override_fonts/font = ExtResource("3_41nfg")
 text = "Gallery"
+flat = true
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("2_xrvgy")
+theme_override_fonts/font = ExtResource("3_41nfg")
 text = "Exit"
+flat = true
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Gallery" to="." method="_on_gallery_pressed"]

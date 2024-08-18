@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmy4e0lx6o4ew"]
+[gd_scene load_steps=6 format=3 uid="uid://cmy4e0lx6o4ew"]
 
+[ext_resource type="Script" path="res://scripts/components/table.gd" id="1_4xurb"]
 [ext_resource type="Texture2D" uid="uid://dswwl7lp4l0nh" path="res://assets/UI/table/Tattoo_table_back.png" id="1_npl0e"]
 [ext_resource type="Texture2D" uid="uid://c16ac6ig7n5bj" path="res://assets/UI/table/Tattoo_table_glass.png" id="2_lbdcg"]
 [ext_resource type="Texture2D" uid="uid://ds85gxdp05egu" path="res://assets/UI/table/Tattoo_table_front.png" id="4_1kdrf"]
+[ext_resource type="PackedScene" uid="uid://dg34gb4xpp7gw" path="res://scenes/game_elements/timer_arrrow.tscn" id="5_8ci73"]
 
 [node name="Table" type="Node2D"]
+script = ExtResource("1_4xurb")
 
 [node name="TattooTableBack" type="Sprite2D" parent="."]
 z_index = 1
@@ -20,3 +23,6 @@ texture = ExtResource("2_lbdcg")
 z_index = 4
 position = Vector2(276, 90)
 texture = ExtResource("4_1kdrf")
+
+[node name="TimerArrrow" parent="." instance=ExtResource("5_8ci73")]
+position = Vector2(283, 47)

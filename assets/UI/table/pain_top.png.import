@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c6jr3e8mh3k2s"
-path="res://.godot/imported/pain_top.png-7184ea61cc36be5376326d117f94640e.ctex"
+path="res://.godot/imported/pain_top.png-4e94bb340891f750f1da6313d929edbf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pain_top.png"
-dest_files=["res://.godot/imported/pain_top.png-7184ea61cc36be5376326d117f94640e.ctex"]
+source_file="res://assets/UI/table/pain_top.png"
+dest_files=["res://.godot/imported/pain_top.png-4e94bb340891f750f1da6313d929edbf.ctex"]
 
 [params]
 

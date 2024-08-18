@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/components/pain_manager.gd" id="1_j0nnt"]
 [ext_resource type="Texture2D" uid="uid://1dacp6b7tui4" path="res://assets/pain_glass.png" id="2_pu7j1"]
 [ext_resource type="Curve" uid="uid://bxkdjyyea3ryl" path="res://scenes/components/pain_curve.tres" id="2_xynvm"]
-[ext_resource type="Texture2D" uid="uid://c6jr3e8mh3k2s" path="res://assets/pain_top.png" id="4_m7hbj"]
+[ext_resource type="Texture2D" uid="uid://c6jr3e8mh3k2s" path="res://assets/UI/table/pain_top.png" id="4_m7hbj"]
 [ext_resource type="Script" path="res://scripts/components/pain_top.gd" id="5_6io14"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c5si6"]

@@ -1,0 +1,28 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=12 format=3 uid="uid://diudtjub7aroe"]
+
+[ext_resource type="AudioStream" uid="uid://cear86ykp5p18" path="res://assets/audio/sfx/orc-pain-001.ogg" id="1_c0t64"]
+[ext_resource type="AudioStream" uid="uid://t8bnh3otscik" path="res://assets/audio/sfx/orc-pain-002.ogg" id="2_li0ms"]
+[ext_resource type="AudioStream" uid="uid://psynbiwfccuy" path="res://assets/audio/sfx/orc-pain-011.ogg" id="3_anrd0"]
+[ext_resource type="AudioStream" uid="uid://b10jrat5dluu2" path="res://assets/audio/sfx/orc-pain-003.ogg" id="4_68ldo"]
+[ext_resource type="AudioStream" uid="uid://bfqojd7d62vth" path="res://assets/audio/sfx/orc-pain-004.ogg" id="5_br1a3"]
+[ext_resource type="AudioStream" uid="uid://b5jdbe2ipb30" path="res://assets/audio/sfx/orc-pain-005.ogg" id="6_8wooy"]
+[ext_resource type="AudioStream" uid="uid://blddu555bowxv" path="res://assets/audio/sfx/orc-pain-006.ogg" id="7_313bf"]
+[ext_resource type="AudioStream" uid="uid://dplix3w6hm4ua" path="res://assets/audio/sfx/orc-pain-007.ogg" id="8_xh0hq"]
+[ext_resource type="AudioStream" uid="uid://r7rm0xxy181f" path="res://assets/audio/sfx/orc-pain-008.ogg" id="9_0887l"]
+[ext_resource type="AudioStream" uid="uid://dt075g8lvj00j" path="res://assets/audio/sfx/orc-pain-009.ogg" id="10_mimrh"]
+[ext_resource type="AudioStream" uid="uid://botstjta62rqb" path="res://assets/audio/sfx/orc-pain-010.ogg" id="11_pdh6i"]
+
+[resource]
+random_pitch = 1.05
+streams_count = 11
+stream_0/stream = ExtResource("1_c0t64")
+stream_1/stream = ExtResource("2_li0ms")
+stream_2/stream = ExtResource("4_68ldo")
+stream_3/stream = ExtResource("5_br1a3")
+stream_4/stream = ExtResource("6_8wooy")
+stream_5/stream = ExtResource("7_313bf")
+stream_6/stream = ExtResource("8_xh0hq")
+stream_7/stream = ExtResource("9_0887l")
+stream_8/stream = ExtResource("10_mimrh")
+stream_9/stream = ExtResource("11_pdh6i")
+stream_10/stream = ExtResource("3_anrd0")

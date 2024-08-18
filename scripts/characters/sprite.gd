@@ -19,3 +19,8 @@ func _input(event: InputEvent) -> void:
 			$AnimSprite.play("active")
 		else:
 			$AnimSprite.play("idle")
+
+
+func _on_pain_exceeded() -> void:
+	set_process_input(false)
+	$AnimSprite.play("lose_idle")

@@ -7,9 +7,10 @@
 script = ExtResource("1_ddu57")
 
 [node name="AnimSprite" type="AnimatedSprite2D" parent="."]
+z_index = 100
 sprite_frames = ExtResource("1_ywqfa")
 animation = &"idle"
-frame_progress = 0.894096
+frame_progress = 0.267073
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": false,
 "output_section": false,

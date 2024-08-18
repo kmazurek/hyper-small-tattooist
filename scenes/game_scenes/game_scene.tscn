@@ -1,23 +1,23 @@
 [gd_scene load_steps=8 format=3 uid="uid://7vpa2j7c454g"]
 
-[ext_resource type="PackedScene" uid="uid://dgciynjjiu4er" path="res://scenes/characters/character.tscn" id="1_gv0l8"]
-[ext_resource type="Script" path="res://scripts/game_world.gd" id="1_tsm6f"]
-[ext_resource type="PackedScene" uid="uid://js725cdp6rq2" path="res://scenes/characters/sprite.tscn" id="2_52hwv"]
-[ext_resource type="PackedScene" uid="uid://c5ujmfkj6com6" path="res://scenes/components/time_bar.tscn" id="2_txhqv"]
-[ext_resource type="PackedScene" uid="uid://bjx0qr7rglxml" path="res://scenes/components/pain_bar.tscn" id="3_glnsa"]
-[ext_resource type="Texture2D" uid="uid://7yy8b6ffcadc" path="res://assets/Tattoo_Visual.png" id="4_264nb"]
-[ext_resource type="PackedScene" uid="uid://76sp2httv23d" path="res://scenes/components/flash.tscn" id="6_fkxu6"]
+[ext_resource type="Script" path="res://scripts/game_world.gd" id="1_fyj1r"]
+[ext_resource type="PackedScene" uid="uid://js725cdp6rq2" path="res://scenes/characters/sprite.tscn" id="2_knvp0"]
+[ext_resource type="PackedScene" uid="uid://dgciynjjiu4er" path="res://scenes/characters/character.tscn" id="3_esfte"]
+[ext_resource type="PackedScene" uid="uid://c5ujmfkj6com6" path="res://scenes/components/time_bar.tscn" id="4_da0b6"]
+[ext_resource type="PackedScene" uid="uid://bjx0qr7rglxml" path="res://scenes/components/pain_bar.tscn" id="5_ge1mm"]
+[ext_resource type="Texture2D" uid="uid://7yy8b6ffcadc" path="res://assets/Tattoo_Visual.png" id="6_4pu4q"]
+[ext_resource type="PackedScene" uid="uid://76sp2httv23d" path="res://scenes/components/flash.tscn" id="7_bx58i"]
 
 [node name="DrawingTest" type="Node2D"]
-script = ExtResource("1_tsm6f")
+script = ExtResource("1_fyj1r")
 
-[node name="Sprite" parent="." instance=ExtResource("2_52hwv")]
+[node name="Sprite" parent="." instance=ExtResource("2_knvp0")]
 position = Vector2(119, 36)
 
-[node name="Character" parent="." instance=ExtResource("1_gv0l8")]
+[node name="Character" parent="." instance=ExtResource("3_esfte")]
 position = Vector2(161, 91)
 
-[node name="TimeLeft" parent="." instance=ExtResource("2_txhqv")]
+[node name="TimeLeft" parent="." instance=ExtResource("4_da0b6")]
 visible = false
 custom_minimum_size = Vector2(0, 0)
 anchors_preset = 5
@@ -30,7 +30,7 @@ grow_horizontal = 2
 pivot_offset = Vector2(0, 0)
 max_value = 120.0
 
-[node name="PainBar" parent="." instance=ExtResource("3_glnsa")]
+[node name="PainBar" parent="." instance=ExtResource("5_ge1mm")]
 position = Vector2(271, 171)
 maximum_pain = 50.0
 
@@ -63,9 +63,9 @@ render_target_update_mode = 4
 visibility_layer = 2
 z_index = -10
 position = Vector2(160, 90)
-texture = ExtResource("4_264nb")
+texture = ExtResource("6_4pu4q")
 
-[node name="Flash" parent="." instance=ExtResource("6_fkxu6")]
+[node name="Flash" parent="." instance=ExtResource("7_bx58i")]
 
 [connection signal="on_character_move" from="Character" to="PainBar" method="_on_character_move"]
 [connection signal="time_out" from="TimeLeft" to="Character" method="_on_time_left_time_out"]

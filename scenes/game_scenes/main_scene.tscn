@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ceururw2spvy"]
+
+[ext_resource type="Script" path="res://scripts/main_scene.gd" id="1_0s88x"]
+[ext_resource type="AudioStream" uid="uid://b6dfojdpupnhf" path="res://assets/audio/music/bgm2.ogg" id="1_gohb7"]
+
+[node name="MainScene" type="Node2D"]
+script = ExtResource("1_0s88x")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_gohb7")
+autoplay = true
+
+[node name="GUI" type="CanvasLayer" parent="."]

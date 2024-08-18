@@ -37,6 +37,7 @@ scale = Vector2(7, 1)
 texture = SubResource("CanvasTexture_nu3lb")
 
 [node name="Glass" type="Sprite2D" parent="."]
+visible = false
 z_index = 1
 z_as_relative = false
 position = Vector2(7.49985, -42)

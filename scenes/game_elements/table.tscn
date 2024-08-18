@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://cmy4e0lx6o4ew"]
+
+[ext_resource type="Texture2D" uid="uid://dswwl7lp4l0nh" path="res://assets/UI/table/Tattoo_table_back.png" id="1_npl0e"]
+[ext_resource type="Texture2D" uid="uid://c16ac6ig7n5bj" path="res://assets/UI/table/Tattoo_table_glass.png" id="2_lbdcg"]
+[ext_resource type="Texture2D" uid="uid://ds85gxdp05egu" path="res://assets/UI/table/Tattoo_table_front.png" id="4_1kdrf"]
+
+[node name="Table" type="Node2D"]
+
+[node name="TattooTableBack" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(276, 90)
+texture = ExtResource("1_npl0e")
+
+[node name="TattooTableGlass" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(276, 90)
+texture = ExtResource("2_lbdcg")
+
+[node name="TattooTableFront" type="Sprite2D" parent="."]
+z_index = 4
+position = Vector2(276, 90)
+texture = ExtResource("4_1kdrf")

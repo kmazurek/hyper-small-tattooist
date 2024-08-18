@@ -1,4 +1,4 @@
-extends Sprite2D
+extends AnimatedSprite2D
 
 @export var y_offset = -2
 
@@ -12,6 +12,7 @@ func _ready() -> void:
 			break
 	
 	bar_height = progress_bar.size.x
+	play("Tag")
 	
 
 func _process(delta: float) -> void:

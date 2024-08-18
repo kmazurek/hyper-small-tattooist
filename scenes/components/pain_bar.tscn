@@ -3,12 +3,13 @@
 [ext_resource type="Script" path="res://scripts/components/pain_manager.gd" id="1_j0nnt"]
 [ext_resource type="Texture2D" uid="uid://1dacp6b7tui4" path="res://assets/pain_glass.png" id="2_pu7j1"]
 [ext_resource type="Curve" uid="uid://bxkdjyyea3ryl" path="res://scenes/components/pain_curve.tres" id="2_xynvm"]
-[ext_resource type="Texture2D" uid="uid://c6jr3e8mh3k2s" path="res://assets/UI/table/pain_top.png" id="4_m7hbj"]
+[ext_resource type="SpriteFrames" uid="uid://cbavw4cmtbkve" path="res://assets/UI/Tattoo_liquid_top_pain.res" id="4_6em0c"]
 [ext_resource type="Script" path="res://scripts/components/pain_top.gd" id="5_6io14"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c5si6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kmsws"]
+bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_nu3lb"]
 
@@ -22,7 +23,7 @@ self_modulate = Color(0.901961, 0.270588, 0.223529, 1)
 z_index = -2
 offset_left = 3.0
 offset_top = -4.0
-offset_right = 79.0
+offset_right = 73.0
 offset_bottom = 5.0
 rotation = -1.5708
 theme_override_styles/background = SubResource("StyleBoxEmpty_c5si6")
@@ -30,7 +31,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_kmsws")
 show_percentage = false
 
 [node name="BarBottom" type="Sprite2D" parent="Bar"]
-self_modulate = Color(0.541176, 0.160784, 0.133333, 1)
+self_modulate = Color(0.901961, 0.270588, 0.223529, 1)
 position = Vector2(-3.68356e-06, 1)
 rotation = 1.5708
 scale = Vector2(7, 1)
@@ -42,9 +43,18 @@ z_index = 1
 z_as_relative = false
 position = Vector2(7.49985, -42)
 texture = ExtResource("2_pu7j1")
+metadata/_aseprite_wizard_interface_config_ = {
+"animation_section": true,
+"layer_section": true,
+"output_section": true,
+"slice_section": true
+}
 
-[node name="BarTop" type="Sprite2D" parent="."]
-position = Vector2(7, -80)
-texture = ExtResource("4_m7hbj")
+[node name="BarTop" type="AnimatedSprite2D" parent="."]
+z_index = -2
+position = Vector2(8, -80)
+sprite_frames = ExtResource("4_6em0c")
+animation = &"Tag"
+frame_progress = 0.985274
 script = ExtResource("5_6io14")
 y_offset = -5

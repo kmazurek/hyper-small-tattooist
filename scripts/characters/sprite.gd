@@ -31,3 +31,8 @@ func _on_win() -> void:
 func _on_anim_sprite_animation_looped() -> void:
 	if $AnimSprite.get_animation() == "win_start":
 		$AnimSprite.play("win_idle")
+
+func reset() -> void:
+	set_process_input(false)
+	$AnimSprite.play("idle")
+	

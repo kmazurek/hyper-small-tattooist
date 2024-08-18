@@ -1,18 +1,19 @@
 extends Node
 
 signal on_failure
+signal on_win
 
 func _on_time_out() -> void:
 	failure()
 
 func _on_ink_depleted() -> void:
-	failure()
+	$Flash.flash()
+	save_screenshot()
+	new_client()
+	on_win.emit()
 
 func _on_pain_exceeded() -> void:
 	failure()
-
-func _on_next_client() -> void:
-	save_screenshot()
 
 func failure() -> void:
 	on_failure.emit()
@@ -28,3 +29,8 @@ func save_screenshot() -> void:
 	var screenshots_num = screenshot_directory.get_files().size()
 	
 	$SubViewportContainer/SubViewport.get_texture().get_image().save_png(screenshot_directory.get_current_dir() + "/tattoo_" + str(screenshots_num) + ".png")
+
+func new_client() -> void:
+	for child in get_children():
+		if child.has_method("reset"):
+			child.reset()

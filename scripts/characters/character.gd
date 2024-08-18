@@ -42,3 +42,11 @@ func on_failure() -> void:
 	set_process(false)
 	set_process_input(false)
 	current_button_index = -1
+
+func reset() -> void:
+	is_walking = false
+	$Drawer.stop_drawing(position)
+	$Drawer.clear()
+	set_process(true)
+	set_process_input(true)
+	current_button_index = -1

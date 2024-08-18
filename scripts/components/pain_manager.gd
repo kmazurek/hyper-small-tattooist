@@ -25,3 +25,7 @@ func _on_character_move(velocity: Vector2, max_velocity: float) -> void:
 		if $Bar.value >= $Bar.max_value:
 			set_process(false)
 			on_pain_exceeded.emit()
+
+func reset() -> void:
+	set_process(true)
+	$Bar.value = 0

@@ -8,6 +8,7 @@
 
 [node name="Table" type="Node2D"]
 script = ExtResource("1_4xurb")
+time = 300.0
 
 [node name="TattooTableBack" type="Sprite2D" parent="."]
 z_index = -5

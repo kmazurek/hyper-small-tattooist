@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cgs1qkivsqhwj"
+path="res://.godot/imported/Tattoo_table.aseprite-3736cded4a51825824423e1718ba7967.res"
+
+[deps]
+
+source_file="res://assets/UI/table/Tattoo_table.aseprite"
+dest_files=["res://.godot/imported/Tattoo_table.aseprite-3736cded4a51825824423e1718ba7967.res"]
+
+[params]
+

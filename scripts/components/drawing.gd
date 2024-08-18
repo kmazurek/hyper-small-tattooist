@@ -10,7 +10,6 @@ var is_drawing: bool = false
 
 func _ready() -> void:
 	viewport = get_tree().root.find_child("SubViewport", true, false) as SubViewport
-	return
 
 func start_drawing(current_position: Vector2) -> void:
 	is_drawing = true

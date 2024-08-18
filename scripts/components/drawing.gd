@@ -23,6 +23,8 @@ func start_drawing(current_position: Vector2) -> void:
 	
 	current_line.add_point(current_position)
 	
+	$AudioStreamPlayer.play()
+	
 func update_line(current_position: Vector2) -> void:
 	if is_drawing:
 		current_line.add_point(current_position)
@@ -30,3 +32,4 @@ func update_line(current_position: Vector2) -> void:
 func stop_drawing(current_position: Vector2) -> void:
 	current_line.add_point(current_position)
 	is_drawing = false
+	$AudioStreamPlayer.stop()

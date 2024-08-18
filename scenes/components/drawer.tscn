@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://kflfxfs54hwb"]
+[gd_scene load_steps=4 format=3 uid="uid://kflfxfs54hwb"]
 
 [ext_resource type="Script" path="res://scripts/components/drawing.gd" id="1_s7uso"]
+[ext_resource type="AudioStream" uid="uid://s47f4rndtt1l" path="res://assets/audio/sfx/tattoo-machine-randomizer.tres" id="2_bkdyc"]
 
 [sub_resource type="Curve" id="Curve_qee4p"]
 _data = [Vector2(0, 0.5), 0.0, 0.0, 0, 1, Vector2(1, 0.5), 0.0, 0.0, 1, 0]
@@ -10,3 +11,7 @@ point_count = 2
 script = ExtResource("1_s7uso")
 color = Color(0.162851, 0.167527, 0.31903, 1)
 width_curve = SubResource("Curve_qee4p")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_bkdyc")
+volume_db = -16.0

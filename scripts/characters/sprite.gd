@@ -24,3 +24,11 @@ func _input(event: InputEvent) -> void:
 func _on_pain_exceeded() -> void:
 	set_process_input(false)
 	$AnimSprite.play("lose_idle")
+
+func _on_win() -> void:
+	set_process_input(false)
+	$AnimSprite.play("win_start")
+
+func _on_anim_sprite_animation_looped() -> void:
+	if $AnimSprite.get_animation() == "win_start":
+		$AnimSprite.play("win_idle")

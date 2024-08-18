@@ -10,9 +10,11 @@ script = ExtResource("1_ddu57")
 z_index = 100
 sprite_frames = ExtResource("1_ywqfa")
 animation = &"idle"
-frame_progress = 0.267073
+frame_progress = 0.331884
 metadata/_aseprite_wizard_interface_config_ = {
 "layer_section": false,
 "output_section": false,
 "slice_section": false
 }
+
+[connection signal="animation_looped" from="AnimSprite" to="." method="_on_anim_sprite_animation_looped"]

@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://js725cdp6rq2"]
+[gd_scene load_steps=3 format=3 uid="uid://dshi5ww7hs07f"]
 
-[ext_resource type="Script" path="res://scripts/characters/sprite.gd" id="1_ddu57"]
-[ext_resource type="SpriteFrames" uid="uid://bjoo5wmxlwhl1" path="res://assets/Sprite.aseprite" id="1_ywqfa"]
+[ext_resource type="Script" path="res://scripts/characters/pixie.gd" id="1_jhup2"]
+[ext_resource type="SpriteFrames" uid="uid://bjoo5wmxlwhl1" path="res://assets/graphics/Sprite.aseprite" id="1_ywqfa"]
 
 [node name="Sprite" type="Node2D"]
-script = ExtResource("1_ddu57")
+script = ExtResource("1_jhup2")
 
 [node name="AnimSprite" type="AnimatedSprite2D" parent="."]
 z_index = 100

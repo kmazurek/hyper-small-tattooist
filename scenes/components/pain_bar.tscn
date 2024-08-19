@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://bjx0qr7rglxml"]
 
 [ext_resource type="Script" path="res://scripts/components/pain_manager.gd" id="1_j0nnt"]
-[ext_resource type="Texture2D" uid="uid://1dacp6b7tui4" path="res://assets/pain_glass.png" id="2_pu7j1"]
+[ext_resource type="Texture2D" uid="uid://1dacp6b7tui4" path="res://assets/graphics/pain_glass.png" id="2_pu7j1"]
 [ext_resource type="Curve" uid="uid://bxkdjyyea3ryl" path="res://scenes/components/pain_curve.tres" id="2_xynvm"]
 [ext_resource type="SpriteFrames" uid="uid://cbavw4cmtbkve" path="res://assets/UI/Tattoo_liquid_top_pain.res" id="4_6em0c"]
 [ext_resource type="Script" path="res://scripts/components/pain_top.gd" id="5_6io14"]

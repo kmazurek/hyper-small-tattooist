@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1msh8m0j48x5"
-path="res://.godot/imported/Gnome.png-a99a2029a00e2d27033bc48839e1496d.ctex"
+uid="uid://bdkq8py414bs4"
+path="res://.godot/imported/Tattoo_BG.png-a1ace0d01a434e03d6e7feb59569e4fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Gnome.png"
-dest_files=["res://.godot/imported/Gnome.png-a99a2029a00e2d27033bc48839e1496d.ctex"]
+source_file="res://assets/graphics/Tattoo_BG.png"
+dest_files=["res://.godot/imported/Tattoo_BG.png-a1ace0d01a434e03d6e7feb59569e4fd.ctex"]
 
 [params]
 

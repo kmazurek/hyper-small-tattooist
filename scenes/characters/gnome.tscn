@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://dgciynjjiu4er"]
 
-[ext_resource type="Script" path="res://scripts/characters/character.gd" id="1_crrhc"]
+[ext_resource type="Script" path="res://scripts/characters/gnome.gd" id="1_crrhc"]
 [ext_resource type="PackedScene" uid="uid://kflfxfs54hwb" path="res://scenes/components/drawer.tscn" id="2_4spay"]
-[ext_resource type="SpriteFrames" uid="uid://dhgael7lnhjf0" path="res://assets/Gnome.aseprite" id="2_pjk35"]
+[ext_resource type="SpriteFrames" uid="uid://dhgael7lnhjf0" path="res://assets/graphics/Gnome.aseprite" id="2_pjk35"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbmxj"]
 size = Vector2(12, 10)

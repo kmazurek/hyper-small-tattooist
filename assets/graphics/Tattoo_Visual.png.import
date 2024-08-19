@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1dacp6b7tui4"
-path="res://.godot/imported/pain_glass.png-07635a5d7b1ee9aaa42ae37a9127c3d9.ctex"
+uid="uid://7yy8b6ffcadc"
+path="res://.godot/imported/Tattoo_Visual.png-48c3646619260cd8ee5947fa4e3f159a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/pain_glass.png"
-dest_files=["res://.godot/imported/pain_glass.png-07635a5d7b1ee9aaa42ae37a9127c3d9.ctex"]
+source_file="res://assets/graphics/Tattoo_Visual.png"
+dest_files=["res://.godot/imported/Tattoo_Visual.png-48c3646619260cd8ee5947fa4e3f159a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdkq8py414bs4"
-path="res://.godot/imported/Tattoo_BG.png-013f25c09b9633f8724f7f2a55d88de4.ctex"
+uid="uid://c5thtbpu80fy8"
+path="res://.godot/imported/Sprite.png-086be4d0718089175e110729f6e414ea.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Tattoo_BG.png"
-dest_files=["res://.godot/imported/Tattoo_BG.png-013f25c09b9633f8724f7f2a55d88de4.ctex"]
+source_file="res://assets/graphics/Sprite.png"
+dest_files=["res://.godot/imported/Sprite.png-086be4d0718089175e110729f6e414ea.ctex"]
 
 [params]
 

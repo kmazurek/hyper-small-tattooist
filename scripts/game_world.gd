@@ -43,6 +43,11 @@ func new_client() -> void:
 		return
 	
 	$ClientCount.frame = client_count - 1
-	for child in get_children():
+	reset_children(self)
+
+func reset_children(root):
+	for child in root.get_children():
+		reset_children(child)
+		
 		if child.has_method("reset"):
 			child.reset()

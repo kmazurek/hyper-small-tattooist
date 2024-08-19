@@ -93,9 +93,11 @@ frame = 9
 
 [connection signal="on_failure" from="." to="Pixie" method="_on_failure"]
 [connection signal="on_failure" from="." to="Gnome" method="on_failure"]
+[connection signal="on_failure" from="." to="SubViewportContainer/SubViewport/Client" method="on_failure"]
 [connection signal="on_failure" from="." to="Table" method="on_failure"]
 [connection signal="on_win" from="." to="Pixie" method="_on_win"]
 [connection signal="on_win" from="." to="Gnome" method="on_win"]
+[connection signal="on_win" from="." to="SubViewportContainer/SubViewport/Client" method="on_win"]
 [connection signal="on_win" from="." to="SubViewportContainer/SubViewport/TattooNameFrame" method="reload_theme"]
 [connection signal="on_win" from="." to="Table" method="on_win"]
 [connection signal="on_character_move" from="Gnome" to="PainBar" method="_on_character_move"]
@@ -104,4 +106,5 @@ frame = 9
 [connection signal="on_pain_exceeded" from="PainBar" to="." method="_on_pain_exceeded"]
 [connection signal="on_ink_depleted" from="InkBar" to="." method="_on_ink_depleted"]
 
+[editable path="PainBar"]
 [editable path="InkBar"]

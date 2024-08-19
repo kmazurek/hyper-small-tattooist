@@ -18,5 +18,11 @@ func _process(delta: float) -> void:
 		set_process(false)
 		on_time_out.emit()
 
+func on_win() -> void:
+	set_process(false)
+
 func on_failure() -> void:
 	set_process(false)
+
+func reset() -> void:
+	set_process(true)

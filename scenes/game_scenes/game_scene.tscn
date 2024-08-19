@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://7vpa2j7c454g"]
+[gd_scene load_steps=13 format=3 uid="uid://7vpa2j7c454g"]
 
 [ext_resource type="Script" path="res://scripts/game_world.gd" id="1_fyj1r"]
 [ext_resource type="PackedScene" uid="uid://js725cdp6rq2" path="res://scenes/characters/sprite.tscn" id="2_knvp0"]
@@ -6,9 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://bjx0qr7rglxml" path="res://scenes/components/pain_bar.tscn" id="5_ge1mm"]
 [ext_resource type="Texture2D" uid="uid://7yy8b6ffcadc" path="res://assets/Tattoo_Visual.png" id="6_4pu4q"]
 [ext_resource type="PackedScene" uid="uid://cmy4e0lx6o4ew" path="res://scenes/game_elements/table.tscn" id="6_h3mm0"]
+[ext_resource type="FontFile" uid="uid://bmpy836xurddj" path="res://assets/fonts/monciaki-sans-regular.ttf" id="6_r3yfy"]
 [ext_resource type="PackedScene" uid="uid://76sp2httv23d" path="res://scenes/components/flash.tscn" id="7_bx58i"]
 [ext_resource type="PackedScene" uid="uid://ci1afl8yvra7x" path="res://scenes/components/ink_bar.tscn" id="8_jynve"]
 [ext_resource type="SpriteFrames" uid="uid://be0n4fu82qv4q" path="res://assets/fonts/clients_numbers.aseprite" id="9_4pn63"]
+[ext_resource type="Texture2D" uid="uid://bjcjdbn4pwu5u" path="res://assets/UI/tattoo_name_frame.png" id="10_tnpyk"]
+[ext_resource type="Script" path="res://scripts/components/tattoo_name.gd" id="11_k0hvg"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_fyj1r")
@@ -50,6 +53,25 @@ z_index = -10
 position = Vector2(160, 90)
 texture = ExtResource("6_4pu4q")
 
+[node name="TattooNameFrame" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
+visibility_layer = 3
+z_index = 15
+position = Vector2(68, 10)
+texture = ExtResource("10_tnpyk")
+script = ExtResource("11_k0hvg")
+
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport/TattooNameFrame"]
+visibility_layer = 2
+offset_left = -63.0
+offset_top = -16.0
+offset_right = 65.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("6_r3yfy")
+theme_override_font_sizes/font_size = 8
+text = "lorem ipsum"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Flash" parent="." instance=ExtResource("7_bx58i")]
 
 [node name="Table" parent="." instance=ExtResource("6_h3mm0")]
@@ -73,6 +95,7 @@ frame = 9
 [connection signal="on_failure" from="." to="Sprite" method="_on_failure"]
 [connection signal="on_failure" from="." to="Character" method="on_failure"]
 [connection signal="on_failure" from="." to="Table" method="on_failure"]
+[connection signal="on_win" from="." to="SubViewportContainer/SubViewport/TattooNameFrame" method="reload_theme"]
 [connection signal="on_character_move" from="Character" to="PainBar" method="_on_character_move"]
 [connection signal="on_character_move" from="Character" to="InkBar" method="_on_character_move"]
 [connection signal="on_time_out" from="Table" to="." method="_on_time_out"]

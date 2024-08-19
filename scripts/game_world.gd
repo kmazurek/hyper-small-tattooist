@@ -11,6 +11,8 @@ func _on_time_out() -> void:
 
 func _on_ink_depleted() -> void:
 	$Flash.flash()
+	
+	await RenderingServer.frame_post_draw
 	save_screenshot()
 	new_client()
 	on_win.emit()
@@ -25,7 +27,6 @@ func failure() -> void:
 	on_failure.emit()
 	
 func save_screenshot() -> void:
-	await RenderingServer.frame_post_draw
 	var user_directory = DirAccess.open(OS.get_executable_path() + "/..")
 
 	if !user_directory.dir_exists("tattoos"):

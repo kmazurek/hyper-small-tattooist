@@ -21,7 +21,7 @@ func _ready() -> void:
 
 func spawn_menu() -> void:
 	main_menu_instance = main_menu_scene.instantiate() as MainMenu
-	main_menu_instance.on_start.connect(spawn_tutorial)
+	main_menu_instance.on_start.connect(start_game)
 	main_menu_instance.on_gallery_open.connect(open_gallery)
 	main_menu_instance.on_exit.connect(exit)
 	
@@ -33,7 +33,7 @@ func spawn_failure_screen() -> void:
 	$GUI.add_child(failure_screen_instance)
 
 func start_game() -> void:
-	tutorial_screen_instance.queue_free()
+	main_menu_instance.queue_free()
 	spawn_game()
 
 func restart_game() -> void:
@@ -50,6 +50,8 @@ func spawn_game() -> void:
 	game_instance = game_scene.instantiate()
 	game_instance.connect("on_failure", spawn_failure_screen)
 	game_instance.connect("on_win", spawn_next_screen)
+	$Curtain/AnimationPlayer.play("open_close")
+	$FakeBackground.visible = false
 	add_child(game_instance)
 
 func spawn_tutorial() -> void:

@@ -2,19 +2,19 @@
 
 [ext_resource type="Script" path="res://scripts/game_world.gd" id="1_fyj1r"]
 [ext_resource type="PackedScene" uid="uid://c3m0qwjt14wfh" path="res://scenes/characters/pixie.tscn" id="2_knvp0"]
-[ext_resource type="PackedScene" uid="uid://dgciynjjiu4er" path="res://scenes/characters/gnome.tscn" id="3_esfte"]
+[ext_resource type="PackedScene" uid="uid://8egw0ht0273s" path="res://scenes/characters/gnome.tscn" id="3_esfte"]
 [ext_resource type="SpriteFrames" uid="uid://bxwmd028f3n8q" path="res://assets/graphics/Tattoo_BG.aseprite" id="4_61nia"]
 [ext_resource type="PackedScene" uid="uid://bjx0qr7rglxml" path="res://scenes/components/pain_bar.tscn" id="5_ge1mm"]
-[ext_resource type="PackedScene" uid="uid://b8j3714j8thc7" path="res://scenes/game_elements/client.tscn" id="5_iauca"]
+[ext_resource type="PackedScene" uid="uid://by8238ero0fdg" path="res://scenes/game_elements/client.tscn" id="5_iauca"]
 [ext_resource type="Script" path="res://scripts/components/background.gd" id="5_ik1r5"]
 [ext_resource type="PackedScene" uid="uid://cmy4e0lx6o4ew" path="res://scenes/game_elements/table.tscn" id="6_h3mm0"]
 [ext_resource type="FontFile" uid="uid://bmpy836xurddj" path="res://assets/fonts/monciaki-sans-regular.ttf" id="6_r3yfy"]
-[ext_resource type="PackedScene" path="res://scenes/components/flash.tscn" id="7_bx58i"]
-[ext_resource type="PackedScene" uid="uid://bbep7q6l487ok" path="res://scenes/components/ink_bar.tscn" id="8_jynve"]
+[ext_resource type="PackedScene" uid="uid://76sp2httv23d" path="res://scenes/components/flash.tscn" id="7_bx58i"]
+[ext_resource type="PackedScene" uid="uid://ci1afl8yvra7x" path="res://scenes/components/ink_bar.tscn" id="8_jynve"]
 [ext_resource type="SpriteFrames" uid="uid://be0n4fu82qv4q" path="res://assets/fonts/clients_numbers.aseprite" id="9_4pn63"]
 [ext_resource type="Texture2D" uid="uid://bjcjdbn4pwu5u" path="res://assets/UI/tattoo_name_frame.png" id="10_tnpyk"]
 [ext_resource type="Script" path="res://scripts/components/tattoo_name.gd" id="11_k0hvg"]
-[ext_resource type="PackedScene" uid="uid://osgn4fwqhi3l" path="res://scenes/components/small_talk_cloud.tscn" id="15_4pfly"]
+[ext_resource type="PackedScene" path="res://scenes/components/small_talk_cloud.tscn" id="15_4pfly"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_fyj1r")
@@ -52,6 +52,7 @@ animation = &"Tag"
 script = ExtResource("5_ik1r5")
 
 [node name="Client" parent="SubViewportContainer/SubViewport" instance=ExtResource("5_iauca")]
+visibility_layer = 3
 
 [node name="TattooNameFrame" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
 visibility_layer = 3
@@ -100,6 +101,7 @@ position = Vector2(32, 114)
 [connection signal="on_failure" from="." to="SubViewportContainer/SubViewport/Client" method="on_failure"]
 [connection signal="on_failure" from="." to="Table" method="on_failure"]
 [connection signal="on_failure" from="." to="SmallTalkCloud" method="on_failure"]
+[connection signal="on_new_client" from="." to="SubViewportContainer/SubViewport/Client" method="on_new_client"]
 [connection signal="on_win" from="." to="Pixie" method="_on_win"]
 [connection signal="on_win" from="." to="Gnome" method="on_win"]
 [connection signal="on_win" from="." to="SubViewportContainer/SubViewport/Client" method="on_win"]

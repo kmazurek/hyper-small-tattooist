@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b8j3714j8thc7"]
+[gd_scene load_steps=11 format=3 uid="uid://by8238ero0fdg"]
 
 [ext_resource type="SpriteFrames" uid="uid://byr46akcdnnae" path="res://assets/clients/Client_Orc_1.aseprite" id="1_u01r4"]
 [ext_resource type="Script" path="res://scripts/characters/client.gd" id="2_nck0t"]
 [ext_resource type="AudioStream" uid="uid://diudtjub7aroe" path="res://assets/audio/sfx/orc-pain-randomizer.tres" id="3_4ywa7"]
+[ext_resource type="SpriteFrames" uid="uid://c17fwjyya7o8s" path="res://assets/clients/Client_Orc_2.aseprite" id="3_w7bjn"]
+[ext_resource type="SpriteFrames" uid="uid://cf1hg5v1u0jyx" path="res://assets/clients/Client_Orc_3.aseprite" id="4_ypf54"]
 
 [sub_resource type="Animation" id="Animation_deg1h"]
 length = 0.1
@@ -129,6 +131,7 @@ position = Vector2(160, 90)
 sprite_frames = ExtResource("1_u01r4")
 animation = &"pain"
 script = ExtResource("2_nck0t")
+type_of_client = Array[SpriteFrames]([ExtResource("1_u01r4"), ExtResource("3_w7bjn"), ExtResource("4_ypf54")])
 
 [node name="OrcCollision" type="StaticBody2D" parent="."]
 

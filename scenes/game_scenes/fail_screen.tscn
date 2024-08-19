@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8if5mq406m3b"]
+[gd_scene load_steps=6 format=3 uid="uid://uqhypq2m6u3r"]
 
 [ext_resource type="Script" path="res://scripts/failure_screen.gd" id="1_8uhqn"]
 [ext_resource type="FontFile" uid="uid://bmpy836xurddj" path="res://assets/fonts/monciaki-sans-regular.ttf" id="1_fpn5s"]

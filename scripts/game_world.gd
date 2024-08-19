@@ -3,6 +3,7 @@ class_name GameWorld extends Node
 signal on_failure
 signal on_win
 signal on_game_finished
+signal on_new_client
 
 var client_count: int = 10
 
@@ -44,6 +45,8 @@ func new_client() -> void:
 	
 	$ClientCount.frame = client_count - 1
 	reset_children(self)
+	
+	on_new_client.emit()
 
 func reset_children(root):
 	for child in root.get_children():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dcrlhrcbiyr53"]
+[gd_scene load_steps=3 format=3 uid="uid://bumsmb826m0ck"]
 
 [ext_resource type="Script" path="res://scripts/next_client.gd" id="1_lses7"]
 [ext_resource type="FontFile" uid="uid://bmpy836xurddj" path="res://assets/fonts/monciaki-sans-regular.ttf" id="2_fxwjw"]

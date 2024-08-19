@@ -43,3 +43,5 @@ func stop_drawing(current_position: Vector2) -> void:
 func clear() -> void:
 	for line in lines:
 		line.queue_free()
+		
+	lines.clear()

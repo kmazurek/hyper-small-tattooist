@@ -4,10 +4,12 @@ extends Node
 @onready var game_scene = preload("res://scenes/game_scenes/game_scene.tscn")
 @onready var failure_screen = preload("res://scenes/game_scenes/fail_screen.tscn")
 @onready var screenshot_directory = OS.get_executable_path() + "/../tattoos"
+@onready var tutorial_screen = preload("res://scenes/game_scenes/tutorial_screen.tscn")
 
 var main_menu_instance: MainMenu
 var game_instance: GameWorld
 var failure_screen_instance: Control
+var tutorial_screen_instance: Control
 
 func _ready() -> void:
 	if !DirAccess.dir_exists_absolute(screenshot_directory):
@@ -17,7 +19,7 @@ func _ready() -> void:
 
 func spawn_menu() -> void:
 	main_menu_instance = main_menu_scene.instantiate() as MainMenu
-	main_menu_instance.on_start.connect(start_game)
+	main_menu_instance.on_start.connect(spawn_tutorial)
 	main_menu_instance.on_gallery_open.connect(open_gallery)
 	main_menu_instance.on_exit.connect(exit)
 	
@@ -29,7 +31,7 @@ func spawn_failure_screen() -> void:
 	$GUI.add_child(failure_screen_instance)
 
 func start_game() -> void:
-	main_menu_instance.queue_free()
+	tutorial_screen_instance.queue_free()
 	spawn_game()
 
 func restart_game() -> void:
@@ -46,3 +48,9 @@ func spawn_game() -> void:
 	game_instance = game_scene.instantiate()
 	game_instance.connect("on_failure", spawn_failure_screen)
 	add_child(game_instance)
+
+func spawn_tutorial() -> void:
+	main_menu_instance.queue_free()
+	tutorial_screen_instance = tutorial_screen.instantiate()
+	tutorial_screen_instance.connect("on_tutorial_proceed", start_game)
+	$GUI.add_child(tutorial_screen_instance)

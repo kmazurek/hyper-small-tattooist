@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://osgn4fwqhi3l"]
+[gd_scene load_steps=6 format=3 uid="uid://osgn4fwqhi3l"]
 
 [ext_resource type="Texture2D" uid="uid://8bhn35u2kux3" path="res://assets/UI/tattoo_small_talk_cloud.png" id="1_k21dt"]
 [ext_resource type="Script" path="res://scripts/components/small_talk_cloud.gd" id="1_yclqg"]
 [ext_resource type="FontFile" uid="uid://x07ugp8rkb70" path="res://assets/fonts/monciaki-sans-narrow.ttf" id="2_60b6w"]
 [ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="4_rq3pj"]
+[ext_resource type="AudioStream" uid="uid://blpf4ll5es8cp" path="res://assets/audio/sfx/orc-talk-randomizer.tres" id="5_bgkl3"]
 
 [node name="SmallTalkCloud" type="Node2D"]
 script = ExtResource("1_yclqg")
@@ -31,3 +32,7 @@ _set_defaults = true
 _base_font_size = 5
 _current_font_size = 5
 _last_size_state = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_bgkl3")
+volume_db = -6.0

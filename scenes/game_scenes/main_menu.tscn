@@ -125,7 +125,9 @@ size_flags_vertical = 4
 layout_mode = 2
 size_flags_vertical = 4
 theme = ExtResource("2_xrvgy")
+theme_override_colors/font_color = Color(1, 0.537255, 0.2, 1)
 theme_override_fonts/font = ExtResource("3_41nfg")
+theme_override_font_sizes/font_size = 5
 text = "Start"
 flat = true
 

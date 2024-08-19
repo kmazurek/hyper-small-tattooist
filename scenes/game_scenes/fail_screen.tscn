@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://uqhypq2m6u3r"]
+[gd_scene load_steps=7 format=3 uid="uid://uqhypq2m6u3r"]
 
 [ext_resource type="Script" path="res://scripts/failure_screen.gd" id="1_8uhqn"]
 [ext_resource type="FontFile" uid="uid://bmpy836xurddj" path="res://assets/fonts/monciaki-sans-regular.ttf" id="1_fpn5s"]
+[ext_resource type="FontFile" uid="uid://x07ugp8rkb70" path="res://assets/fonts/monciaki-sans-narrow.ttf" id="2_u5i48"]
 [ext_resource type="SpriteFrames" uid="uid://dd570e58npih3" path="res://assets/UI/gameover_death.aseprite" id="3_4fkuo"]
 
 [sub_resource type="Animation" id="Animation_we0g4"]
@@ -67,15 +68,17 @@ alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("1_fpn5s")
-theme_override_font_sizes/font_size = 10
+theme_override_colors/font_color = Color(1, 0.537255, 0.2, 1)
+theme_override_fonts/font = ExtResource("2_u5i48")
+theme_override_font_sizes/font_size = 5
 text = "Too much pain!"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.537255, 0.2, 1)
 theme_override_fonts/font = ExtResource("1_fpn5s")
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 5
 text = "Restart"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

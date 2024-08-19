@@ -1,0 +1,16 @@
+[gd_resource type="AudioStreamRandomizer" load_steps=6 format=3 uid="uid://blpf4ll5es8cp"]
+
+[ext_resource type="AudioStream" uid="uid://bu7r8as67mhhe" path="res://assets/audio/sfx/orc-talk-001.ogg" id="1_hk0hy"]
+[ext_resource type="AudioStream" uid="uid://bxilqs5q8v75n" path="res://assets/audio/sfx/orc-talk-002.ogg" id="2_2ufyn"]
+[ext_resource type="AudioStream" uid="uid://xepsw2iac765" path="res://assets/audio/sfx/orc-talk-003.ogg" id="3_s10v5"]
+[ext_resource type="AudioStream" uid="uid://dbbmvv7kyhcjq" path="res://assets/audio/sfx/orc-talk-004.ogg" id="4_rd23f"]
+[ext_resource type="AudioStream" uid="uid://dnknp4wwdqc7l" path="res://assets/audio/sfx/orc-talk-005.ogg" id="5_d7oxu"]
+
+[resource]
+random_pitch = 1.05
+streams_count = 5
+stream_0/stream = ExtResource("1_hk0hy")
+stream_1/stream = ExtResource("2_2ufyn")
+stream_2/stream = ExtResource("3_s10v5")
+stream_3/stream = ExtResource("4_rd23f")
+stream_4/stream = ExtResource("5_d7oxu")

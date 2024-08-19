@@ -33,11 +33,13 @@ func _process(delta: float) -> void:
 	$Sprite2D.position[1] += cos(time * 2) / 50
 
 func _on_ouch_threshold_exceeded() -> void:
-	await _show_text(ouch_strings.pick_random(), 1.0)
+	await _show_text(ouch_strings.pick_random(), 1.0, false)
 	
-func _show_text(text: String, duration: float = 3.0) -> void:
+func _show_text(text: String, duration: float = 3.0, play_audio: bool = true) -> void:
 	$Sprite2D/LabelAutoSizer.text = text
 	$Sprite2D.visible = true
+	if play_audio:
+		$AudioStreamPlayer.play()
 	await get_tree().create_timer(duration).timeout
 	$Sprite2D.visible = false
 	

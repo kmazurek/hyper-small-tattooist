@@ -1,4 +1,4 @@
-extends Node
+class_name GameWorld extends Node
 
 signal on_failure
 signal on_win

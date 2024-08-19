@@ -17,3 +17,6 @@ func _process(delta: float) -> void:
 		$TimerArrrow.rotation = 0
 		set_process(false)
 		on_time_out.emit()
+
+func on_failure() -> void:
+	set_process(false)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://v60hup17t1e8"]
+[gd_scene load_steps=11 format=3 uid="uid://v60hup17t1e8"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_3ych5"]
 [ext_resource type="Theme" uid="uid://bx0cs1bs1vjyb" path="res://assets/graphics/button_theme.tres" id="2_xrvgy"]
 [ext_resource type="FontFile" uid="uid://bmpy836xurddj" path="res://assets/fonts/monciaki-sans-regular.ttf" id="3_41nfg"]
+[ext_resource type="SpriteFrames" uid="uid://b7ejov8m5dfn3" path="res://assets/UI/menu_bar_Red_big.res" id="4_angn8"]
 [ext_resource type="SpriteFrames" uid="uid://dgj4u5oseact6" path="res://assets/UI/menu_logo.aseprite" id="4_l7a7p"]
 [ext_resource type="AudioStream" uid="uid://jw11imj4wwl2" path="res://assets/audio/sfx/sword.ogg" id="5_beh3v"]
 
@@ -106,6 +107,7 @@ size_flags_vertical = 3
 script = ExtResource("1_3ych5")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -130,6 +132,12 @@ theme_override_fonts/font = ExtResource("3_41nfg")
 theme_override_font_sizes/font_size = 5
 text = "Start"
 flat = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Start"]
+z_index = -1
+position = Vector2(44, 9)
+sprite_frames = ExtResource("4_angn8")
+animation = &"idle"
 
 [node name="Gallery" type="Button" parent="VBoxContainer"]
 visible = false

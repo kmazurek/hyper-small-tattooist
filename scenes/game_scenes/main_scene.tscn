@@ -1,15 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://ceururw2spvy"]
 
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="1_0s88x"]
-[ext_resource type="AudioStream" uid="uid://g0yaeny22mju" path="res://assets/audio/music/background_music_randomizer.tres" id="2_4ygi5"]
+[ext_resource type="Script" path="res://scripts/components/music_manager.gd" id="3_08hrj"]
 
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_0s88x")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_4ygi5")
 volume_db = -6.0
 autoplay = true
+script = ExtResource("3_08hrj")
 
 [node name="GUI" type="CanvasLayer" parent="."]
 layer = 2
+
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_playback_finished"]

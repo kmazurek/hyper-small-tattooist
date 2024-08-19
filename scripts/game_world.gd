@@ -2,6 +2,7 @@ extends Node
 
 signal on_failure
 signal on_win
+signal on_game_finished
 
 var client_count: int = 10
 
@@ -16,6 +17,9 @@ func _on_ink_depleted() -> void:
 
 func _on_pain_exceeded() -> void:
 	failure()
+
+func game_finished() -> void:
+	on_game_finished.emit()
 
 func failure() -> void:
 	on_failure.emit()
@@ -34,6 +38,10 @@ func save_screenshot() -> void:
 
 func new_client() -> void:
 	client_count -= 1
+	if client_count == 0:
+		on_game_finished.emit()
+		return
+	
 	$ClientCount.frame = client_count - 1
 	for child in get_children():
 		if child.has_method("reset"):

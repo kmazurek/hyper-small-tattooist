@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ci1afl8yvra7x"]
+[gd_scene load_steps=8 format=3 uid="uid://bbep7q6l487ok"]
 
 [ext_resource type="Script" path="res://scripts/components/ink_manager.gd" id="1_pv3jc"]
 [ext_resource type="SpriteFrames" uid="uid://dn8s2u5qbl1fd" path="res://assets/UI/Tattoo_liquid_top_ink.res" id="2_002c3"]

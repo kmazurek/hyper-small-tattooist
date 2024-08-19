@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://osgn4fwqhi3l"]
+
+[ext_resource type="Texture2D" uid="uid://8bhn35u2kux3" path="res://assets/UI/tattoo_small_talk_cloud.png" id="1_k21dt"]
+[ext_resource type="Script" path="res://scripts/components/small_talk_cloud.gd" id="1_yclqg"]
+[ext_resource type="FontFile" uid="uid://x07ugp8rkb70" path="res://assets/fonts/monciaki-sans-narrow.ttf" id="2_60b6w"]
+[ext_resource type="Script" path="res://addons/label_font_auto_sizer/label_auto_sizer.gd" id="4_rq3pj"]
+
+[node name="SmallTalkCloud" type="Node2D"]
+script = ExtResource("1_yclqg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_k21dt")
+
+[node name="LabelAutoSizer" type="Label" parent="Sprite2D"]
+offset_left = -19.0
+offset_top = -17.0
+offset_right = 20.0
+offset_bottom = 18.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_60b6w")
+theme_override_font_sizes/font_size = 8
+text = "lorem ipsum"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+script = ExtResource("4_rq3pj")
+_size_just_modified_by_autosizer = false
+_set_defaults = true
+_base_font_size = 16
+_current_font_size = 8
+_last_size_state = 1

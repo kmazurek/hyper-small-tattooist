@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://7vpa2j7c454g"]
+[gd_scene load_steps=16 format=3 uid="uid://7vpa2j7c454g"]
 
 [ext_resource type="Script" path="res://scripts/game_world.gd" id="1_fyj1r"]
 [ext_resource type="PackedScene" uid="uid://c3m0qwjt14wfh" path="res://scenes/characters/pixie.tscn" id="2_knvp0"]
@@ -10,10 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://cmy4e0lx6o4ew" path="res://scenes/game_elements/table.tscn" id="6_h3mm0"]
 [ext_resource type="FontFile" uid="uid://bmpy836xurddj" path="res://assets/fonts/monciaki-sans-regular.ttf" id="6_r3yfy"]
 [ext_resource type="PackedScene" path="res://scenes/components/flash.tscn" id="7_bx58i"]
-[ext_resource type="PackedScene" path="res://scenes/components/ink_bar.tscn" id="8_jynve"]
+[ext_resource type="PackedScene" uid="uid://bbep7q6l487ok" path="res://scenes/components/ink_bar.tscn" id="8_jynve"]
 [ext_resource type="SpriteFrames" uid="uid://be0n4fu82qv4q" path="res://assets/fonts/clients_numbers.aseprite" id="9_4pn63"]
 [ext_resource type="Texture2D" uid="uid://bjcjdbn4pwu5u" path="res://assets/UI/tattoo_name_frame.png" id="10_tnpyk"]
 [ext_resource type="Script" path="res://scripts/components/tattoo_name.gd" id="11_k0hvg"]
+[ext_resource type="PackedScene" uid="uid://osgn4fwqhi3l" path="res://scenes/components/small_talk_cloud.tscn" id="15_4pfly"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_fyj1r")
@@ -91,6 +92,9 @@ position = Vector2(258, 127)
 sprite_frames = ExtResource("9_4pn63")
 frame = 9
 
+[node name="SmallTalkCloud" parent="." instance=ExtResource("15_4pfly")]
+position = Vector2(32, 114)
+
 [connection signal="on_failure" from="." to="Pixie" method="_on_failure"]
 [connection signal="on_failure" from="." to="Gnome" method="on_failure"]
 [connection signal="on_failure" from="." to="SubViewportContainer/SubViewport/Client" method="on_failure"]
@@ -104,6 +108,7 @@ frame = 9
 [connection signal="on_character_move" from="Gnome" to="InkBar" method="_on_character_move"]
 [connection signal="on_time_out" from="Table" to="." method="_on_time_out"]
 [connection signal="on_ouch_threshold_exceeded" from="PainBar" to="SubViewportContainer/SubViewport/Client" method="_on_ouch_threshold_exceeded"]
+[connection signal="on_ouch_threshold_exceeded" from="PainBar" to="SmallTalkCloud" method="_on_ouch_threshold_exceeded"]
 [connection signal="on_pain_exceeded" from="PainBar" to="." method="_on_pain_exceeded"]
 [connection signal="on_ink_depleted" from="InkBar" to="." method="_on_ink_depleted"]
 

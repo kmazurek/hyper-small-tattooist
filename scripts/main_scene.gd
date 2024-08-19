@@ -62,10 +62,12 @@ func spawn_tutorial() -> void:
 	$GUI.add_child(tutorial_screen_instance)
 
 func spawn_next_screen() -> void:
-	$Curtain/AnimationPlayer.play("open_close", -1, -1.0, true)
+	await get_tree().create_timer(0.5).timeout
+	
 	next_screen_instance = next_screen.instantiate()
 	next_screen_instance.connect("on_next", game_instance.new_client)
-	$GUI.add_child(next_screen_instance)
+	$GUI.add_child(next_screen_instance)	
+	$Curtain/AnimationPlayer.play("open_close", -1, -1.0, true)
 	
 func open_curtain() -> void:
 	$Curtain/AnimationPlayer.play("open_close")

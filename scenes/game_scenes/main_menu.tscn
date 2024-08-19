@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://v60hup17t1e8"]
+[gd_scene load_steps=10 format=3 uid="uid://v60hup17t1e8"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_3ych5"]
 [ext_resource type="Theme" uid="uid://bx0cs1bs1vjyb" path="res://assets/graphics/button_theme.tres" id="2_xrvgy"]
 [ext_resource type="FontFile" uid="uid://bmpy836xurddj" path="res://assets/fonts/monciaki-sans-regular.ttf" id="3_41nfg"]
 [ext_resource type="SpriteFrames" uid="uid://dgj4u5oseact6" path="res://assets/UI/menu_logo.aseprite" id="4_l7a7p"]
+[ext_resource type="AudioStream" uid="uid://jw11imj4wwl2" path="res://assets/audio/sfx/sword.ogg" id="5_beh3v"]
 
 [sub_resource type="Animation" id="Animation_jljov"]
 length = 0.29
@@ -147,12 +148,17 @@ flat = true
 [node name="Logo" type="AnimatedSprite2D" parent="."]
 position = Vector2(160, 90)
 sprite_frames = ExtResource("4_l7a7p")
-animation = &"open"
+animation = &"close"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Logo"]
 libraries = {
 "": SubResource("AnimationLibrary_asyt2")
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Logo"]
+stream = ExtResource("5_beh3v")
+volume_db = -3.0
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Gallery" to="." method="_on_gallery_pressed"]

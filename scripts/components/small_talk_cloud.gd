@@ -20,6 +20,7 @@ const small_talk_min_wait_time: float = 8.0
 const small_talk_max_wait_time: float = 12.0
 
 var time: float
+var timer: Timer
 
 func _ready() -> void:
 	$Sprite2D.visible = false
@@ -41,7 +42,7 @@ func _show_text(text: String, duration: float = 3.0) -> void:
 	$Sprite2D.visible = false
 	
 func _start_small_talk_timer() -> void:
-	var timer: Timer = Timer.new()
+	timer = Timer.new()
 	add_child(timer)
 	timer.one_shot = true
 	timer.wait_time = randf_range(small_talk_min_wait_time, small_talk_max_wait_time)
@@ -51,4 +52,17 @@ func _start_small_talk_timer() -> void:
 func _on_timer_timeout() -> void:
 	if $Sprite2D.visible == false:
 		await _show_text(small_talk_strings.pick_random())
+	_start_small_talk_timer()
+	
+func on_failure() -> void:
+	timer.stop()
+	$Sprite2D.visible = false
+	
+func on_win() -> void:
+	timer.stop()
+	$Sprite2D.visible = false
+	
+func reset() -> void:
+	timer.stop()
+	$Sprite2D.visible = false
 	_start_small_talk_timer()

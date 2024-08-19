@@ -3,6 +3,8 @@ extends Node
 signal on_failure
 signal on_win
 
+var client_count: int = 10
+
 func _on_time_out() -> void:
 	failure()
 
@@ -31,6 +33,8 @@ func save_screenshot() -> void:
 	$SubViewportContainer/SubViewport.get_texture().get_image().save_png(screenshot_directory.get_current_dir() + "/tattoo_" + str(screenshots_num) + ".png")
 
 func new_client() -> void:
+	client_count -= 1
+	$ClientCount.frame = client_count - 1
 	for child in get_children():
 		if child.has_method("reset"):
 			child.reset()

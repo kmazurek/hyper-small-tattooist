@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://7vpa2j7c454g"]
+[gd_scene load_steps=10 format=3 uid="uid://7vpa2j7c454g"]
 
 [ext_resource type="Script" path="res://scripts/game_world.gd" id="1_fyj1r"]
 [ext_resource type="PackedScene" uid="uid://js725cdp6rq2" path="res://scenes/characters/sprite.tscn" id="2_knvp0"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cmy4e0lx6o4ew" path="res://scenes/game_elements/table.tscn" id="6_h3mm0"]
 [ext_resource type="PackedScene" uid="uid://76sp2httv23d" path="res://scenes/components/flash.tscn" id="7_bx58i"]
 [ext_resource type="PackedScene" uid="uid://ci1afl8yvra7x" path="res://scenes/components/ink_bar.tscn" id="8_jynve"]
+[ext_resource type="SpriteFrames" uid="uid://be0n4fu82qv4q" path="res://assets/fonts/clients_numbers.aseprite" id="9_4pn63"]
 
 [node name="GameScene" type="Node2D"]
 script = ExtResource("1_fyj1r")
@@ -62,6 +63,12 @@ position = Vector2(298, 165)
 
 [node name="Bar" parent="InkBar" index="0"]
 offset_right = 118.0
+
+[node name="ClientCount" type="AnimatedSprite2D" parent="."]
+z_index = 10
+position = Vector2(258, 127)
+sprite_frames = ExtResource("9_4pn63")
+frame = 9
 
 [connection signal="on_failure" from="." to="Sprite" method="_on_failure"]
 [connection signal="on_failure" from="." to="Character" method="on_failure"]

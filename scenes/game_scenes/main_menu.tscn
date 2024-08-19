@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://v60hup17t1e8"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_3ych5"]
-[ext_resource type="Theme" uid="uid://bx0cs1bs1vjyb" path="res://assets/button_theme.tres" id="2_xrvgy"]
+[ext_resource type="Theme" uid="uid://bx0cs1bs1vjyb" path="res://assets/graphics/button_theme.tres" id="2_xrvgy"]
 [ext_resource type="FontFile" uid="uid://bmpy836xurddj" path="res://assets/fonts/monciaki-sans-regular.ttf" id="3_41nfg"]
 
 [node name="MainMenu" type="Control"]

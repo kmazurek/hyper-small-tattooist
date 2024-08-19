@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/components/ink_manager.gd" id="1_pv3jc"]
 [ext_resource type="SpriteFrames" uid="uid://dn8s2u5qbl1fd" path="res://assets/UI/Tattoo_liquid_top_ink.res" id="2_002c3"]
-[ext_resource type="Texture2D" uid="uid://1dacp6b7tui4" path="res://assets/pain_glass.png" id="3_5745m"]
+[ext_resource type="Texture2D" uid="uid://1dacp6b7tui4" path="res://assets/graphics/pain_glass.png" id="3_5745m"]
 [ext_resource type="Script" path="res://scripts/components/pain_top.gd" id="5_wtiw5"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c5si6"]

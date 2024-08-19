@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dshi5ww7hs07f"]
+[gd_scene load_steps=3 format=3 uid="uid://c3m0qwjt14wfh"]
 
 [ext_resource type="Script" path="res://scripts/characters/pixie.gd" id="1_jhup2"]
 [ext_resource type="SpriteFrames" uid="uid://bjoo5wmxlwhl1" path="res://assets/graphics/Sprite.aseprite" id="1_ywqfa"]

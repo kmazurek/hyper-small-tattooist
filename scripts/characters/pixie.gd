@@ -21,18 +21,27 @@ func _input(event: InputEvent) -> void:
 			$AnimSprite.play("idle")
 
 func _on_failure() -> void:
-	set_process_input(false)
+	stop_processing()
 	$AnimSprite.play("lose_idle")
 
 func _on_win() -> void:
-	set_process_input(false)
+	stop_processing()
 	$AnimSprite.play("win_start")
+
+func reset() -> void:
+	start_processing()
+	$AnimSprite.play("idle")
+	
+func stop_processing() -> void:
+	set_process_input(false)
+	set_process(false)
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+
+func start_processing() -> void:
+	set_process_input(true)
+	set_process(true)
+	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 
 func _on_anim_sprite_animation_looped() -> void:
 	if $AnimSprite.get_animation() == "win_start":
 		$AnimSprite.play("win_idle")
-
-func reset() -> void:
-	set_process_input(false)
-	$AnimSprite.play("idle")
-	

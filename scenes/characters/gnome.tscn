@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgciynjjiu4er"]
+[gd_scene load_steps=5 format=3 uid="uid://8egw0ht0273s"]
 
 [ext_resource type="Script" path="res://scripts/characters/gnome.gd" id="1_crrhc"]
 [ext_resource type="PackedScene" uid="uid://kflfxfs54hwb" path="res://scenes/components/drawer.tscn" id="2_4spay"]

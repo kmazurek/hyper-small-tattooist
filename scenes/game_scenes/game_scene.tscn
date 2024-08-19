@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/game_world.gd" id="1_fyj1r"]
 [ext_resource type="PackedScene" uid="uid://c3m0qwjt14wfh" path="res://scenes/characters/pixie.tscn" id="2_knvp0"]
-[ext_resource type="PackedScene" uid="uid://8egw0ht0273s" path="res://scenes/characters/gnome.tscn" id="3_esfte"]
+[ext_resource type="PackedScene" uid="uid://dgciynjjiu4er" path="res://scenes/characters/gnome.tscn" id="3_esfte"]
 [ext_resource type="SpriteFrames" uid="uid://bxwmd028f3n8q" path="res://assets/graphics/Tattoo_BG.aseprite" id="4_61nia"]
 [ext_resource type="PackedScene" uid="uid://bjx0qr7rglxml" path="res://scenes/components/pain_bar.tscn" id="5_ge1mm"]
 [ext_resource type="PackedScene" uid="uid://by8238ero0fdg" path="res://scenes/game_elements/client.tscn" id="5_iauca"]

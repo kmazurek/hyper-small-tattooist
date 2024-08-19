@@ -50,6 +50,7 @@ func spawn_game() -> void:
 	game_instance = game_scene.instantiate()
 	game_instance.connect("on_failure", spawn_failure_screen)
 	game_instance.connect("on_win", spawn_next_screen)
+	game_instance.connect("on_new_client", open_curtain)
 	$Curtain/AnimationPlayer.play("open_close")
 	$FakeBackground.visible = false
 	add_child(game_instance)
@@ -61,6 +62,10 @@ func spawn_tutorial() -> void:
 	$GUI.add_child(tutorial_screen_instance)
 
 func spawn_next_screen() -> void:
+	$Curtain/AnimationPlayer.play("open_close", -1, -1.0, true)
 	next_screen_instance = next_screen.instantiate()
 	next_screen_instance.connect("on_next", game_instance.new_client)
 	$GUI.add_child(next_screen_instance)
+	
+func open_curtain() -> void:
+	$Curtain/AnimationPlayer.play("open_close")

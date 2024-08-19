@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://by8238ero0fdg" path="res://scenes/game_elements/client.tscn" id="5_iauca"]
 [ext_resource type="Script" path="res://scripts/components/background.gd" id="5_ik1r5"]
 [ext_resource type="PackedScene" uid="uid://cmy4e0lx6o4ew" path="res://scenes/game_elements/table.tscn" id="6_h3mm0"]
-[ext_resource type="FontFile" uid="uid://bmpy836xurddj" path="res://assets/fonts/monciaki-sans-regular.ttf" id="6_r3yfy"]
 [ext_resource type="PackedScene" path="res://scenes/components/flash.tscn" id="7_bx58i"]
 [ext_resource type="PackedScene" uid="uid://ci1afl8yvra7x" path="res://scenes/components/ink_bar.tscn" id="8_jynve"]
+[ext_resource type="FontFile" uid="uid://cyiw7whpb30nk" path="res://assets/fonts/monciaki-sans-bold.ttf" id="9_1ldtk"]
 [ext_resource type="SpriteFrames" uid="uid://be0n4fu82qv4q" path="res://assets/fonts/clients_numbers.aseprite" id="9_4pn63"]
 [ext_resource type="Texture2D" uid="uid://bjcjdbn4pwu5u" path="res://assets/UI/tattoo_name_frame.png" id="10_tnpyk"]
 [ext_resource type="Script" path="res://scripts/components/tattoo_name.gd" id="11_k0hvg"]
@@ -63,13 +63,20 @@ script = ExtResource("11_k0hvg")
 
 [node name="Label" type="Label" parent="SubViewportContainer/SubViewport/TattooNameFrame"]
 visibility_layer = 2
-offset_left = -63.0
-offset_top = -16.0
-offset_right = 65.0
-offset_bottom = 16.0
-theme_override_fonts/font = ExtResource("6_r3yfy")
-theme_override_font_sizes/font_size = 6
-text = "lorem ipsum"
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -23.0
+offset_bottom = 9.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.941176, 0.709804, 0.254902, 1)
+theme_override_fonts/font = ExtResource("9_1ldtk")
+theme_override_font_sizes/font_size = 5
+text = "lorem  ipsum"
 horizontal_alignment = 1
 vertical_alignment = 1
 

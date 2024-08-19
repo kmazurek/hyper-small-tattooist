@@ -52,4 +52,4 @@ func _ready() -> void:
 	reload_theme()
 
 func reload_theme() -> void:
-	$Label.text = "%s %s %s" % [adjectives1.pick_random(), adjectives2.pick_random(), nouns.pick_random()]
+	$Label.text = "%s  %s  %s" % [adjectives1.pick_random(), adjectives2.pick_random(), nouns.pick_random()]

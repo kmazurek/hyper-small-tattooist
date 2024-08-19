@@ -5,12 +5,21 @@ extends Node2D
 @export var pain_curve: Curve
 
 signal on_pain_exceeded
+signal on_ouch_threshold_exceeded
 
 var added_pain: float = 0.0
+
+const ouch_threshold: int = 1000
+var ouch_threshold_buffer: int
 
 func _process(delta: float) -> void:
 	if added_pain > 0:
 		$Bar.value += added_pain * delta
+		
+		ouch_threshold_buffer += int(added_pain)
+		if ouch_threshold_buffer / ouch_threshold > 1:
+			on_ouch_threshold_exceeded.emit()
+			ouch_threshold_buffer = 0
 	else:
 		$Bar.value -= ease_rate * delta
 		

@@ -16,6 +16,9 @@ func _process(delta: float) -> void:
 		
 	previous_pain = current_pain
 
+func _on_ouch_threshold_exceeded() -> void:
+	$AudioStreamPlayer.play()
+
 func on_win() -> void:
 	set_process(false)
 	play("happy")

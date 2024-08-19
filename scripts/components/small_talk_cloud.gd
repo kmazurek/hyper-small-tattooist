@@ -19,9 +19,17 @@ var small_talk_strings: Array[String] = [
 const small_talk_min_wait_time: float = 8.0
 const small_talk_max_wait_time: float = 12.0
 
+var time: float
+
 func _ready() -> void:
 	$Sprite2D.visible = false
 	_start_small_talk_timer()
+	
+func _process(delta: float) -> void:
+	# wobble the cloud over time
+	time += delta
+	$Sprite2D.position[0] += sin(time * 4) / 50
+	$Sprite2D.position[1] += cos(time * 2) / 50
 
 func _on_ouch_threshold_exceeded() -> void:
 	await _show_text(ouch_strings.pick_random(), 1.0)

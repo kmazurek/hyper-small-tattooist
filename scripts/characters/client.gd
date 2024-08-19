@@ -3,10 +3,13 @@ extends AnimatedSprite2D
 @export var type_of_client: Array[SpriteFrames] = []
 
 @onready var anim_player = $AnimationPlayer as AnimationPlayer
+@onready var orc_collision = $OrcCollision
+
 
 func _ready() -> void:
 	sprite_frames = type_of_client.pick_random()
 	anim_player.play("idle")
+	orc_collision.reparent(get_tree().root)
 
 func _on_ouch_threshold_exceeded() -> void:
 	$AudioStreamPlayer.play()

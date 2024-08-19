@@ -5,7 +5,7 @@ var character: Node2D
 func _ready() -> void:
 	Input.mouse_mode = Input.MOUSE_MODE_HIDDEN
 	
-	character = get_tree().root.find_child("Character", true, false)
+	character = get_tree().root.find_child("Gnome", true, false)
 	$AnimSprite.play("idle")
 
 func _process(delta: float) -> void:

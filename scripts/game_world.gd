@@ -14,7 +14,6 @@ func _on_ink_depleted() -> void:
 	
 	await RenderingServer.frame_post_draw
 	save_screenshot()
-	new_client()
 	on_win.emit()
 
 func _on_pain_exceeded() -> void:

@@ -46,13 +46,13 @@ func _process(delta: float) -> void:
 			on_character_move.emit(velocity, max_velocity)
 
 func on_failure() -> void:
-	is_walking = false
-	$Drawer.stop_drawing(position)
-	set_process(false)
-	set_process_input(false)
+	stop_processing()
 	$AnimatedSprite.play("lose_start")
-	current_button_index = -1
-
+	
+func on_win() -> void:
+	stop_processing()
+	$AnimatedSprite.play("win_start")
+	
 func reset() -> void:
 	is_walking = false
 	$Drawer.stop_drawing(position)
@@ -62,6 +62,13 @@ func reset() -> void:
 	set_process_input(true)
 	current_button_index = -1
 
+func stop_processing() -> void:
+	is_walking = false
+	$Drawer.stop_drawing(position)
+	set_process(false)
+	set_process_input(false)
+	current_button_index = -1
+	
 func animation_looped() -> void:
 	if $AnimatedSprite.animation == "tattooing_end":
 		$AnimatedSprite.play("idle")
@@ -69,3 +76,5 @@ func animation_looped() -> void:
 		$AnimatedSprite.play("tattooing")
 	if $AnimatedSprite.animation == "lose_start":
 		$AnimatedSprite.play("lose_idle")
+	if $AnimatedSprite.animation == "win_start":
+		$AnimatedSprite.play("win_idle")

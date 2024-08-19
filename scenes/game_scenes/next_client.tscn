@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://bumsmb826m0ck"]
+
+[ext_resource type="Script" path="res://scripts/next_client.gd" id="1_lses7"]
+[ext_resource type="FontFile" uid="uid://bmpy836xurddj" path="res://assets/fonts/monciaki-sans-regular.ttf" id="2_fxwjw"]
+
+[node name="NextScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_lses7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -59.5
+offset_top = -35.5
+offset_right = 60.5
+offset_bottom = 36.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fxwjw")
+theme_override_font_sizes/font_size = 10
+text = "Hurray"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_fxwjw")
+theme_override_font_sizes/font_size = 10
+text = "Next client"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_next_clicked"]

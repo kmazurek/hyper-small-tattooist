@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://by8238ero0fdg"]
+
+[ext_resource type="SpriteFrames" uid="uid://byr46akcdnnae" path="res://assets/clients/Client_Orc_1.aseprite" id="1_u01r4"]
+[ext_resource type="Script" path="res://scripts/characters/client.gd" id="2_nck0t"]
+
+[node name="Client" type="AnimatedSprite2D"]
+visibility_layer = 2
+position = Vector2(160, 90)
+sprite_frames = ExtResource("1_u01r4")
+animation = &"idle"
+script = ExtResource("2_nck0t")
+
+[node name="OrcCollision" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OrcCollision"]
+position = Vector2(-83, 3)
+build_mode = 1
+polygon = PackedVector2Array(-4, -18, -1, -38, 2, -55, 6, -62, 12, -71, 22, -79, 38, -85, 61, -87, 92, -88, 127, -85, 155, -74, 180, -59, 182, -37, 178, -25, 162, -13, 160, -6, 153, 13, 145, 28, 136, 41, 123, 42, 101, 42, 83, 39, 63, 36, 56, 32, 59, 22, 44, 7, 35, 20, 24, 25, 9, 25, -2, 10, -2, -9)

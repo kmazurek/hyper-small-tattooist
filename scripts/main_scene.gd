@@ -13,8 +13,8 @@ extends Node
 
 var main_menu_instance: MainMenu
 var game_instance: GameWorld
+var next_screen_instance: NextScreen
 var failure_screen_instance: Control
-var next_screen_instance: Control
 var tutorial_screen_instance: Control
 
 signal button_pressed
@@ -62,6 +62,7 @@ func spawn_game() -> void:
 	game_instance.connect("on_failure", spawn_failure_screen)
 	game_instance.connect("on_win", spawn_next_screen)
 	game_instance.connect("on_new_client", open_curtain)
+	game_instance.connect("on_game_finished", game_finished)
 	open_curtain()
 	$FakeBackground.visible = false
 	add_child(game_instance)
@@ -91,6 +92,7 @@ func spawn_next_screen() -> void:
 	game_instance.show_polaroid(get_tree().create_tween())
 	next_screen_instance = next_screen.instantiate()
 	next_screen_instance.connect("on_next", game_instance.new_client)
+	next_screen_instance.show_thank_you(game_instance.client_count <= 1)
 	$GUI.add_child(next_screen_instance)
 	
 func open_curtain() -> void:
@@ -98,3 +100,8 @@ func open_curtain() -> void:
 	$AudioStreamPlayer.stream = curtain_open_sound
 	$AudioStreamPlayer.play()
 	$Curtain/AnimationPlayer.play("open_close")
+	
+func game_finished() -> void:
+	game_instance.queue_free()
+	$FakeBackground.visible = true
+	spawn_menu()

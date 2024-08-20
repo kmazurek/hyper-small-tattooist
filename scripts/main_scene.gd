@@ -7,6 +7,10 @@ extends Node
 @onready var screenshot_directory = OS.get_executable_path() + "/../tattoos"
 @onready var tutorial_screen = preload("res://scenes/game_scenes/tutorial_screen.tscn")
 
+@onready var curtain_open_sound = preload("res://assets/audio/sfx/curtain-open.ogg")
+@onready var curtain_close_sound = preload("res://assets/audio/sfx/curtain-close.ogg")
+@onready var photo_print_sound = preload("res://assets/audio/sfx/polaroid-print.ogg")
+
 var main_menu_instance: MainMenu
 var game_instance: GameWorld
 var failure_screen_instance: Control
@@ -51,7 +55,7 @@ func spawn_game() -> void:
 	game_instance.connect("on_failure", spawn_failure_screen)
 	game_instance.connect("on_win", spawn_next_screen)
 	game_instance.connect("on_new_client", open_curtain)
-	$Curtain/AnimationPlayer.play("open_close")
+	open_curtain()
 	$FakeBackground.visible = false
 	add_child(game_instance)
 
@@ -63,14 +67,20 @@ func spawn_tutorial() -> void:
 
 func spawn_next_screen() -> void:
 	await get_tree().create_timer(1.0).timeout
+	$AudioStreamPlayer.stream = curtain_close_sound
+	$AudioStreamPlayer.play()
 	$Curtain/AnimationPlayer.play("open_close", -1, -1.0, true)
 	await $Curtain/AnimationPlayer.animation_finished
 	
+	$AudioStreamPlayer.stream = photo_print_sound
+	$AudioStreamPlayer.play()
 	game_instance.show_polaroid()
 	next_screen_instance = next_screen.instantiate()
 	next_screen_instance.connect("on_next", game_instance.new_client)
-	$GUI.add_child(next_screen_instance)	
+	$GUI.add_child(next_screen_instance)
 	
 func open_curtain() -> void:
 	game_instance.hide_polaroid()
+	$AudioStreamPlayer.stream = curtain_open_sound
+	$AudioStreamPlayer.play()
 	$Curtain/AnimationPlayer.play("open_close")

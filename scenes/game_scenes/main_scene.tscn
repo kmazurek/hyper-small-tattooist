@@ -69,7 +69,7 @@ _data = {
 [node name="MainScene" type="Node2D"]
 script = ExtResource("1_0s88x")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -6.0
 autoplay = true
 script = ExtResource("3_08hrj")
@@ -92,4 +92,7 @@ libraries = {
 "": SubResource("AnimationLibrary_vls5f")
 }
 
-[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_playback_finished"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -6.0
+
+[connection signal="finished" from="BackgroundMusicPlayer" to="BackgroundMusicPlayer" method="_on_playback_finished"]

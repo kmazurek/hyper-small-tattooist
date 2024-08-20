@@ -74,13 +74,13 @@ func spawn_next_screen() -> void:
 	
 	$AudioStreamPlayer.stream = photo_print_sound
 	$AudioStreamPlayer.play()
-	game_instance.show_polaroid()
+	game_instance.show_polaroid(get_tree().create_tween())
 	next_screen_instance = next_screen.instantiate()
 	next_screen_instance.connect("on_next", game_instance.new_client)
 	$GUI.add_child(next_screen_instance)
 	
 func open_curtain() -> void:
-	game_instance.hide_polaroid()
+	game_instance.hide_polaroid(get_tree().create_tween())
 	$AudioStreamPlayer.stream = curtain_open_sound
 	$AudioStreamPlayer.play()
 	$Curtain/AnimationPlayer.play("open_close")

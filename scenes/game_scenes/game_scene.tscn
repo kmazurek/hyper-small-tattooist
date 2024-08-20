@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://by8238ero0fdg" path="res://scenes/game_elements/client.tscn" id="5_iauca"]
 [ext_resource type="Script" path="res://scripts/components/background.gd" id="5_ik1r5"]
 [ext_resource type="PackedScene" uid="uid://cmy4e0lx6o4ew" path="res://scenes/game_elements/table.tscn" id="6_h3mm0"]
-[ext_resource type="PackedScene" uid="uid://bw5aciwtjyr3a" path="res://scenes/components/flash.tscn" id="7_bx58i"]
+[ext_resource type="PackedScene" uid="uid://76sp2httv23d" path="res://scenes/components/flash.tscn" id="7_bx58i"]
 [ext_resource type="PackedScene" uid="uid://ci1afl8yvra7x" path="res://scenes/components/ink_bar.tscn" id="8_jynve"]
 [ext_resource type="FontFile" uid="uid://cyiw7whpb30nk" path="res://assets/fonts/monciaki-sans-bold.ttf" id="9_1ldtk"]
 [ext_resource type="SpriteFrames" uid="uid://be0n4fu82qv4q" path="res://assets/fonts/clients_numbers.aseprite" id="9_4pn63"]

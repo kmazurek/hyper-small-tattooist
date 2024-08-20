@@ -63,11 +63,9 @@ func reset_children(root):
 		if child.has_method("reset"):
 			child.reset()
 
-func show_polaroid():
+func show_polaroid(tween):
 	$Polaroid/Label.text = $SubViewportContainer/SubViewport/TattooNameFrame.get_current_theme()
-	var tween = get_tree().create_tween()
 	tween.tween_property($Polaroid, "position", Vector2(104, 77), 0.25).set_trans(Tween.TRANS_CUBIC)
 	
-func hide_polaroid():
-	var tween = get_tree().create_tween()
+func hide_polaroid(tween):
 	tween.tween_property($Polaroid, "position", Vector2(104, 265), 0.25).set_trans(Tween.TRANS_CUBIC)

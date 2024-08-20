@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://uqhypq2m6u3r"]
+[gd_scene load_steps=14 format=3 uid="uid://uqhypq2m6u3r"]
 
 [ext_resource type="Script" path="res://scripts/failure_screen.gd" id="1_8uhqn"]
 [ext_resource type="FontFile" uid="uid://bmpy836xurddj" path="res://assets/fonts/monciaki-sans-regular.ttf" id="1_fpn5s"]
 [ext_resource type="FontFile" uid="uid://x07ugp8rkb70" path="res://assets/fonts/monciaki-sans-narrow.ttf" id="2_u5i48"]
 [ext_resource type="SpriteFrames" uid="uid://dd570e58npih3" path="res://assets/UI/gameover_death.aseprite" id="3_4fkuo"]
 [ext_resource type="Theme" uid="uid://bx0cs1bs1vjyb" path="res://assets/graphics/button_theme.tres" id="3_40xxu"]
+[ext_resource type="SpriteFrames" uid="uid://b7ejov8m5dfn3" path="res://assets/UI/menu_bar_Red_big.res" id="5_7o7ji"]
 [ext_resource type="SpriteFrames" uid="uid://dde4b0dhqiv4r" path="res://assets/UI/menu_gameover.aseprite" id="6_7p6qk"]
 
 [sub_resource type="Animation" id="Animation_we0g4"]
@@ -167,12 +168,21 @@ text = "Too much pain!"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer"]
+z_index = 2
+z_as_relative = false
 layout_mode = 2
 theme = ExtResource("3_40xxu")
 theme_override_colors/font_color = Color(1, 0.537255, 0.2, 1)
 theme_override_fonts/font = ExtResource("1_fpn5s")
 theme_override_font_sizes/font_size = 5
 text = "Restart"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Button"]
+z_index = 1
+z_as_relative = false
+position = Vector2(58, 5)
+sprite_frames = ExtResource("5_7o7ji")
+animation = &"idle"
 
 [node name="JawsSprite" type="AnimatedSprite2D" parent="."]
 position = Vector2(160, 90)

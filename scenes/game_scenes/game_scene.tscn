@@ -89,7 +89,8 @@ vertical_alignment = 1
 [node name="PainBar" parent="." instance=ExtResource("5_ge1mm")]
 z_index = 3
 position = Vector2(277, 144)
-ease_rate = 15.0
+maximum_pain = 15.0
+ease_rate = 20.0
 
 [node name="InkBar" parent="." instance=ExtResource("8_jynve")]
 position = Vector2(298, 165)

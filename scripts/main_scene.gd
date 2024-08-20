@@ -17,6 +17,12 @@ var failure_screen_instance: Control
 var next_screen_instance: Control
 var tutorial_screen_instance: Control
 
+signal mouse_pressed
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton && event.is_pressed():
+		mouse_pressed.emit()
+
 func _ready() -> void:
 	if !DirAccess.dir_exists_absolute(screenshot_directory):
 		DirAccess.make_dir_absolute(screenshot_directory)
@@ -66,7 +72,7 @@ func spawn_tutorial() -> void:
 	$GUI.add_child(tutorial_screen_instance)
 
 func spawn_next_screen() -> void:
-	await get_tree().create_timer(1.0).timeout
+	await mouse_pressed
 	$AudioStreamPlayer.stream = curtain_close_sound
 	$AudioStreamPlayer.play()
 	$Curtain/AnimationPlayer.play("open_close", -1, -1.0, true)

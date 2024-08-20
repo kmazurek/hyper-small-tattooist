@@ -81,6 +81,11 @@ func spawn_next_screen() -> void:
 	$Curtain/AnimationPlayer.play("open_close", -1, -1.0, true)
 	await $Curtain/AnimationPlayer.animation_finished
 	
+	$Confetti.visible = true
+	$Confetti/AnimationPlayer.play("default")
+	await $Confetti/AnimationPlayer.animation_finished
+	$Confetti.visible = false
+	
 	$AudioStreamPlayer.stream = photo_print_sound
 	$AudioStreamPlayer.play()
 	game_instance.show_polaroid(get_tree().create_tween())

@@ -151,6 +151,7 @@ polygon = PackedVector2Array(9, -20, 20, -36, 40, -47, 58, -52, 71, -53, 78, -53
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_4ywa7")
+volume_db = -6.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

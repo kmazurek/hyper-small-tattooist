@@ -30,7 +30,7 @@ func failure(failure_reason) -> void:
 	on_failure.emit(failure_reason)
 	
 func save_screenshot() -> void:
-	var user_directory = DirAccess.open(OS.get_executable_path() + "/..")
+	var user_directory = DirAccess.open(OS.get_user_data_dir())
 
 	if !user_directory.dir_exists("tattoos"):
 		user_directory.make_dir("tattoos")

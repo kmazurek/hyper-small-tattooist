@@ -10,6 +10,7 @@ extends Node
 @onready var curtain_open_sound = preload("res://assets/audio/sfx/curtain-open.ogg")
 @onready var curtain_close_sound = preload("res://assets/audio/sfx/curtain-close.ogg")
 @onready var photo_print_sound = preload("res://assets/audio/sfx/polaroid-print.ogg")
+@onready var confetti_sound = preload("res://assets/audio/sfx/confetti.ogg")
 
 var main_menu_instance: MainMenu
 var game_instance: GameWorld
@@ -84,6 +85,8 @@ func spawn_next_screen() -> void:
 	
 	$Confetti.visible = true
 	$Confetti/AnimationPlayer.play("default")
+	$AudioStreamPlayer.stream = confetti_sound
+	$AudioStreamPlayer.play()
 	await $Confetti/AnimationPlayer.animation_finished
 	$Confetti.visible = false
 	

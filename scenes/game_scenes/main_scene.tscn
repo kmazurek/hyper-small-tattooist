@@ -104,7 +104,7 @@ _data = {
 script = ExtResource("1_0s88x")
 
 [node name="BackgroundMusicPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -6.0
+volume_db = -8.0
 autoplay = true
 script = ExtResource("3_08hrj")
 
@@ -127,7 +127,7 @@ libraries = {
 }
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-volume_db = -6.0
+volume_db = -4.0
 
 [node name="Continue" type="Label" parent="."]
 visible = false

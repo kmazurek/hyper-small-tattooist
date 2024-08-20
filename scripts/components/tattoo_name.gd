@@ -24,7 +24,9 @@ var adjectives2: Array[String] = [
 	"boring",
 	"weird",
 	"burning",
-	"smoking"
+	"smoking",
+	"fluffy",
+	"vegan"
 ]
 
 var nouns: Array[String] = [
@@ -46,6 +48,12 @@ var nouns: Array[String] = [
 	"dragon",
 	"rabbit",
 	"horse",
+	"ninja",
+	"koala",
+	"bobcat",
+	"banana",
+	"hydra",
+	"face"
 ]
 
 func _ready() -> void:

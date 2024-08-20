@@ -5,7 +5,10 @@ signal on_win
 signal on_game_finished
 signal on_new_client
 
-var client_count: int = 10
+var client_count: int = 5
+
+func _ready() -> void:
+	$ClientCount.frame = client_count - 1
 
 func _on_time_out() -> void:
 	failure()

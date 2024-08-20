@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://ceururw2spvy"]
+[gd_scene load_steps=9 format=3 uid="uid://ceururw2spvy"]
 
 [ext_resource type="Script" path="res://scripts/main_scene.gd" id="1_0s88x"]
 [ext_resource type="Script" path="res://scripts/components/music_manager.gd" id="3_08hrj"]
 [ext_resource type="Texture2D" uid="uid://7yy8b6ffcadc" path="res://assets/graphics/Tattoo_Visual.png" id="3_71ifn"]
 [ext_resource type="SpriteFrames" uid="uid://direw3405veuy" path="res://assets/UI/menu_Curtain.aseprite" id="3_hyho4"]
+[ext_resource type="FontFile" uid="uid://x07ugp8rkb70" path="res://assets/fonts/monciaki-sans-narrow.ttf" id="5_8ben0"]
 
 [sub_resource type="Animation" id="Animation_6gcrd"]
 length = 4.0
@@ -94,5 +95,18 @@ libraries = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 volume_db = -6.0
+
+[node name="Continue" type="Label" parent="."]
+visible = false
+offset_left = 112.0
+offset_top = 158.0
+offset_right = 175.0
+offset_bottom = 181.0
+theme_override_colors/font_color = Color(0.678736, 0.696823, 0.808596, 1)
+theme_override_fonts/font = ExtResource("5_8ben0")
+theme_override_font_sizes/font_size = 5
+text = "Press to continue...
+"
+horizontal_alignment = 1
 
 [connection signal="finished" from="BackgroundMusicPlayer" to="BackgroundMusicPlayer" method="_on_playback_finished"]

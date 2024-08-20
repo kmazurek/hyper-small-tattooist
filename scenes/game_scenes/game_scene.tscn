@@ -103,6 +103,12 @@ frame = 9
 [node name="SmallTalkCloud" parent="." instance=ExtResource("15_4pfly")]
 position = Vector2(32, 114)
 
+[node name="Polaroid" type="Sprite2D" parent="."]
+z_index = 1000
+position = Vector2(104, 82)
+region_enabled = true
+region_rect = Rect2(75, 8, 167, 126)
+
 [connection signal="on_failure" from="." to="Pixie" method="_on_failure"]
 [connection signal="on_failure" from="." to="Gnome" method="on_failure"]
 [connection signal="on_failure" from="." to="SubViewportContainer/SubViewport/Client" method="on_failure"]

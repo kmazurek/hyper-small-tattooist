@@ -35,7 +35,15 @@ func save_screenshot() -> void:
 	var screenshot_directory = DirAccess.open(user_directory.get_current_dir() + "/tattoos")
 	var screenshots_num = screenshot_directory.get_files().size()
 	
-	$SubViewportContainer/SubViewport.get_texture().get_image().save_png(screenshot_directory.get_current_dir() + "/tattoo_" + str(screenshots_num) + ".png")
+	var texture = $SubViewportContainer/SubViewport.get_texture()
+	var saved_png_path = screenshot_directory.get_current_dir() + "/tattoo_" + str(screenshots_num) + ".png"
+	texture.get_image().save_png(saved_png_path)
+	
+	var image = Image.new()
+	image.load(saved_png_path)
+	var new_texture = ImageTexture.new()
+	new_texture.set_image(image)
+	$Polaroid.texture = new_texture
 
 func new_client() -> void:
 	client_count -= 1
@@ -54,3 +62,9 @@ func reset_children(root):
 		
 		if child.has_method("reset"):
 			child.reset()
+
+func show_polaroid():
+	$Polaroid.visible = true
+	
+func hide_polaroid():
+	$Polaroid.visible = false

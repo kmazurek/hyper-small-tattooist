@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bumsmb826m0ck"]
+[gd_scene load_steps=6 format=3 uid="uid://bumsmb826m0ck"]
 
 [ext_resource type="Script" path="res://scripts/next_client.gd" id="1_lses7"]
 [ext_resource type="FontFile" uid="uid://bmpy836xurddj" path="res://assets/fonts/monciaki-sans-regular.ttf" id="2_fxwjw"]
 [ext_resource type="FontFile" uid="uid://cyiw7whpb30nk" path="res://assets/fonts/monciaki-sans-bold.ttf" id="2_p8r53"]
 [ext_resource type="Theme" uid="uid://bx0cs1bs1vjyb" path="res://assets/graphics/button_theme.tres" id="3_x6bur"]
+[ext_resource type="SpriteFrames" uid="uid://b7ejov8m5dfn3" path="res://assets/UI/menu_bar_Red_big.res" id="5_poa12"]
 
 [node name="NextScreen" type="Control"]
 layout_mode = 3
@@ -49,5 +50,11 @@ theme_override_colors/font_color = Color(1, 0.537255, 0.2, 1)
 theme_override_fonts/font = ExtResource("2_fxwjw")
 theme_override_font_sizes/font_size = 5
 text = "Next"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Button"]
+z_index = -1
+position = Vector2(61, 5)
+sprite_frames = ExtResource("5_poa12")
+animation = &"idle"
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_next_clicked"]

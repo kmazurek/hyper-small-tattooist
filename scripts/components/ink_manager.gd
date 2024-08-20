@@ -1,6 +1,6 @@
 extends Node
 
-@export var depletion_step: float = 0.075
+@export var depletion_step: float = 0.06
 
 signal on_ink_depleted
 

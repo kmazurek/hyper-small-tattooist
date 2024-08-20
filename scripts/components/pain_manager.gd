@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var maximum_pain: float = 50.0
-@export var ease_rate: float = 10.0
+@export var ease_rate: float = 5.0
 @export var pain_curve: Curve
 
 signal on_pain_exceeded

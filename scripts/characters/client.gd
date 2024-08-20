@@ -4,12 +4,13 @@ extends AnimatedSprite2D
 
 @onready var anim_player = $AnimationPlayer as AnimationPlayer
 @onready var orc_collision = $OrcCollision
+@onready var giant_collision = $GiantCollision
 
+var current_collision: Node = null
 
 func _ready() -> void:
-	sprite_frames = type_of_client.pick_random()
 	anim_player.play("idle")
-	orc_collision.reparent(get_tree().root)
+	on_new_client()
 
 func _on_ouch_threshold_exceeded() -> void:
 	$AudioStreamPlayer.play()
@@ -17,7 +18,17 @@ func _on_ouch_threshold_exceeded() -> void:
 	anim_player.queue("idle")
 
 func on_new_client() -> void:
-	sprite_frames = type_of_client.pick_random()
+	sprite_frames = type_of_client.pick_random() as SpriteFrames
+	if current_collision != null:
+		current_collision.reparent(self)
+
+	if sprite_frames.resource_path.contains("Orc"):
+		current_collision = orc_collision
+		current_collision.call_deferred("reparent", $"../../..")
+		
+	if sprite_frames.resource_path.contains("Giant"):
+		current_collision = giant_collision
+		current_collision.call_deferred("reparent", $"../../..")
 
 func on_win() -> void:
 	set_process(false)

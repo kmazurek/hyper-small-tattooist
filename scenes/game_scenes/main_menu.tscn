@@ -136,7 +136,7 @@ flat = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="VBoxContainer/Start"]
 z_index = -1
-position = Vector2(44, 9)
+position = Vector2(44, 5)
 sprite_frames = ExtResource("4_angn8")
 animation = &"idle"
 

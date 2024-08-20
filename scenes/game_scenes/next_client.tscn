@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bumsmb826m0ck"]
+[gd_scene load_steps=5 format=3 uid="uid://bumsmb826m0ck"]
 
 [ext_resource type="Script" path="res://scripts/next_client.gd" id="1_lses7"]
 [ext_resource type="FontFile" uid="uid://bmpy836xurddj" path="res://assets/fonts/monciaki-sans-regular.ttf" id="2_fxwjw"]
 [ext_resource type="FontFile" uid="uid://cyiw7whpb30nk" path="res://assets/fonts/monciaki-sans-bold.ttf" id="2_p8r53"]
+[ext_resource type="Theme" uid="uid://bx0cs1bs1vjyb" path="res://assets/graphics/button_theme.tres" id="3_x6bur"]
 
 [node name="NextScreen" type="Control"]
 layout_mode = 3
@@ -42,6 +43,7 @@ horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_x6bur")
 theme_override_colors/font_color = Color(1, 0.537255, 0.2, 1)
 theme_override_fonts/font = ExtResource("2_fxwjw")
 theme_override_font_sizes/font_size = 5

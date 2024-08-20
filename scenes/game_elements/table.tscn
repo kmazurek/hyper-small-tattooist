@@ -11,19 +11,23 @@ script = ExtResource("1_4xurb")
 time = 300.0
 
 [node name="TattooTableBack" type="Sprite2D" parent="."]
+visibility_layer = 3
 z_index = -5
 position = Vector2(276, 90)
 texture = ExtResource("1_npl0e")
 
 [node name="TattooTableGlass" type="Sprite2D" parent="."]
+visibility_layer = 3
 z_index = 2
 position = Vector2(276, 90)
 texture = ExtResource("2_lbdcg")
 
 [node name="TattooTableFront" type="Sprite2D" parent="."]
+visibility_layer = 3
 z_index = 4
 position = Vector2(276, 90)
 texture = ExtResource("4_1kdrf")
 
 [node name="TimerArrrow" parent="." instance=ExtResource("5_8ci73")]
+visibility_layer = 3
 position = Vector2(283, 47)

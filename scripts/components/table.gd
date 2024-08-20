@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 func on_win() -> void:
 	set_process(false)
 
-func on_failure() -> void:
+func on_failure(_fail_reason) -> void:
 	set_process(false)
 
 func reset() -> void:

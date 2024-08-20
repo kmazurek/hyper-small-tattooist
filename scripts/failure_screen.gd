@@ -1,4 +1,4 @@
-extends Control
+class_name FailScreen extends Control
 
 signal on_restart
 
@@ -19,3 +19,6 @@ func _on_restart_clicked() -> void:
 	await game_over_anim.animation_finished
 	on_restart.emit()
 	queue_free()
+
+func set_failure_text(failure_reason) -> void:
+	$VBoxContainer/Label.text = failure_reason

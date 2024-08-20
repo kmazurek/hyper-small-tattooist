@@ -56,7 +56,7 @@ func _on_timer_timeout() -> void:
 		await _show_text(small_talk_strings.pick_random())
 	_start_small_talk_timer()
 	
-func on_failure() -> void:
+func on_failure(_fail_reason) -> void:
 	timer.stop()
 	$Sprite2D.visible = false
 	

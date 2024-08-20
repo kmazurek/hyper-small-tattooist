@@ -20,7 +20,7 @@ func _input(event: InputEvent) -> void:
 		else:
 			$AnimSprite.play("idle")
 
-func _on_failure() -> void:
+func _on_failure(_fail_reason) -> void:
 	stop_processing()
 	$AnimSprite.play("lose_idle")
 

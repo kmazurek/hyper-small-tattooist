@@ -1,6 +1,6 @@
 class_name GameWorld extends Node
 
-signal on_failure
+signal on_failure(failure_reason: String)
 signal on_win
 signal on_game_finished
 signal on_new_client
@@ -11,7 +11,7 @@ func _ready() -> void:
 	$ClientCount.frame = client_count - 1
 
 func _on_time_out() -> void:
-	failure()
+	failure("Time has run out!")
 
 func _on_ink_depleted() -> void:
 	$Flash.flash()
@@ -21,13 +21,13 @@ func _on_ink_depleted() -> void:
 	on_win.emit()
 
 func _on_pain_exceeded() -> void:
-	failure()
+	failure("Too much pain!")
 
 func game_finished() -> void:
 	on_game_finished.emit()
 
-func failure() -> void:
-	on_failure.emit()
+func failure(failure_reason) -> void:
+	on_failure.emit(failure_reason)
 	
 func save_screenshot() -> void:
 	var user_directory = DirAccess.open(OS.get_executable_path() + "/..")

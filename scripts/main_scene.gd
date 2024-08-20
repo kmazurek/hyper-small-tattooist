@@ -37,9 +37,10 @@ func spawn_menu() -> void:
 	
 	$GUI.add_child(main_menu_instance)
 
-func spawn_failure_screen() -> void:
-	failure_screen_instance = failure_screen.instantiate()
+func spawn_failure_screen(failure_reason) -> void:
+	failure_screen_instance = failure_screen.instantiate() as FailScreen
 	failure_screen_instance.connect("on_restart", restart_game)
+	failure_screen_instance.set_failure_text(failure_reason)
 	$GUI.add_child(failure_screen_instance)
 
 func start_game() -> void:

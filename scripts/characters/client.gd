@@ -34,7 +34,7 @@ func on_win() -> void:
 	set_process(false)
 	anim_player.play("happy")
 	
-func on_failure() -> void:
+func on_failure(_fail_reason) -> void:
 	set_process(false)
 	anim_player.play("angry")
 

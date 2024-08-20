@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 		if $Drawer.is_drawing:
 			on_character_move.emit(velocity, max_velocity)
 
-func on_failure() -> void:
+func on_failure(_fail_reason) -> void:
 	stop_processing()
 	$AnimatedSprite.play("lose_start")
 	

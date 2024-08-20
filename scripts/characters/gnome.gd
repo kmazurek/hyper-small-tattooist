@@ -54,6 +54,7 @@ func on_win() -> void:
 	$AnimatedSprite.play("win_start")
 	
 func reset() -> void:
+	position = Vector2(161, 91)
 	is_walking = false
 	$Drawer.stop_drawing(position)
 	$Drawer.clear()

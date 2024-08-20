@@ -7,7 +7,7 @@
 script = ExtResource("1_jhup2")
 
 [node name="AnimSprite" type="AnimatedSprite2D" parent="."]
-z_index = 90
+z_index = 100
 sprite_frames = ExtResource("1_ywqfa")
 animation = &"idle"
 frame_progress = 0.980133

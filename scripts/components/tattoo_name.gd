@@ -1,4 +1,4 @@
-extends Sprite2D
+class_name TattooNameFrame extends Sprite2D
 
 var adjectives1: Array[String] = [
 	"small",
@@ -53,3 +53,6 @@ func _ready() -> void:
 
 func reload_theme() -> void:
 	$Label.text = "%s  %s  %s" % [adjectives1.pick_random(), adjectives2.pick_random(), nouns.pick_random()]
+
+func get_current_theme() -> String:
+	return $Label.text

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dswwl7lp4l0nh" path="res://assets/UI/table/Tattoo_table_back.png" id="1_npl0e"]
 [ext_resource type="Texture2D" uid="uid://c16ac6ig7n5bj" path="res://assets/UI/table/Tattoo_table_glass.png" id="2_lbdcg"]
 [ext_resource type="Texture2D" uid="uid://ds85gxdp05egu" path="res://assets/UI/table/Tattoo_table_front.png" id="4_1kdrf"]
-[ext_resource type="PackedScene" path="res://scenes/game_elements/timer_arrrow.tscn" id="5_8ci73"]
+[ext_resource type="PackedScene" uid="uid://dg34gb4xpp7gw" path="res://scenes/game_elements/timer_arrrow.tscn" id="5_8ci73"]
 
 [node name="Table" type="Node2D"]
 script = ExtResource("1_4xurb")
